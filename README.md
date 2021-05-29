@@ -3,8 +3,8 @@
 <center>
 
 # Dancing in the snow
-**Version:** 1.1.0
-**update:** 01/05/30 00:43
+**Version:** 1.1.1
+**update:** 01/05/30 01:14
 
 </center>
 
@@ -39,7 +39,9 @@
   - <font color="red">出现的问题的，图片部分的悬浮效果，悬浮范围不稳定</font>
 </details>
 
-<strong>1.1.0更新内容</strong>
+<details>
+  <summary><strong>1.1.0更新内容</strong></summary>
+
 
 - 中间主体呈现文章摘要
   - 图片大小设为父级的80%等比缩放
@@ -48,6 +50,14 @@
   - 引入插件`smooth-scroll.js`，并在`scroll.js`中对其进行初始化，实现页面内的锚点跳转为滚动方式
 - 导航栏
   - 导航狼的列表里姑且先放了登录注册等字和图标
+</details>
+
+<strong>1.1.1更新内容</strong>
+
+- `preview.css`
+  - 将`#preview`的`margin-top`改为`padding`，使得锚点跳转时不遮盖
+- `style.css`
+  - 修改了导航栏左边logo的鼠标悬浮区域
 
 ---
 
