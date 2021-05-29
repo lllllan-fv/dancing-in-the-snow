@@ -2,7 +2,7 @@
 
 #preview {
     margin: 0 auto;
-    margin-top: 2em;
+    margin-top: 13em;
     width: 60%;
 }
 
@@ -101,6 +101,7 @@
 }
 
 .preview-col img {
+    height: 80%;
     margin-top: 10%;
 }
 

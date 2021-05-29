@@ -64,10 +64,36 @@
     <section id="navigation">
         <div class="container">
             <div class="row">
-                <div class="nav-logo">
-                    <a data-scroll href="#header">
-                        <img class="img-circle" src="img/favicon.png" width="3%">
-                    </a>
+                <div class="col-xs-2 text-left">
+                    <div class="nav-logo"><a data-scroll href="#header">DS<span>.</span></a></div>
+                </div>
+                <div class="col-xs-10 text-right">
+                    <div>
+                        <a href="#" data-placement="bottom" title="Menu" class="nav-menu" data-toggle="dropdown"><i class="col-red bi bi-list" style="color: #45aaf2;"></i></a>
+                        <div class="dropdown-menu">
+                            <div class="arrow-up"></div>
+                            <ul>
+                                <li>
+                                    <a data-scroll href="">Register<i class="bi bi-pencil-fill"></i></a>
+                                </li>
+                                <li id="login-btn">
+                                    <a data-scroll href="">Login<i class="bi bi-box-arrow-in-left"></i></a>
+                                </li>
+                                <li>
+                                    <a data-scroll href="">Logout<i class="bi bi-box-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a data-scroll href="#header">Home<i class="bi bi-house-fill"></i></a>
+                                </li>
+                                <li>
+                                    <a data-scroll href="#preview">Commend<i class="bi bi-book-fill"></i></a>
+                                </li>
+                                <li>
+                                    <a data-scroll href="">About<i class="bi bi-person-circle"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,6 +129,57 @@
                 </div>
             </div>
         </div>
+
+        <div class="preview-row row">
+            <div class="preview-col preview-col-text col-sm-8 col-xs-12">
+                <div class="preview-text">
+                    <h2 class="preview-title">hello world</h2>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                </div>
+            </div>
+            <div class="preview-col preview-img col-sm-4 col-xs-12 wow animate__animated animate__fadeInRight" data-wow-delay="0.5s">
+                <img src="img/OIP.jpg" class="preview-reverse img-rounded img-responsive center-block">
+                <a href="#">
+                    <div class="preview-info">
+                        <h3>Author: <strong>lllllan</strong></h3>
+                        <p>view more</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="preview-row row">
+            <div class="preview-col preview-img col-sm-4 col-xs-12 wow animate__animated animate__fadeInLeft" data-wow-delay="0.5s">
+                <img src="img/OIP.jpg" class="img-rounded img-responsive center-block">
+                <a href="#">
+                    <div class="preview-info">
+                        <h3>Author: <strong>lllllan</strong></h3>
+                        <p>view more</p>
+                    </div>
+                </a>
+            </div>
+            <div class="preview-col preview-col-text col-sm-8 col-xs-12">
+                <div class="preview-text">
+                    <h2 class="preview-title">hello world</h2>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                    <P>print "hello world"</P>
+                </div>
+            </div>
+        </div>
+
 
         <div class="preview-row row">
             <div class="preview-col preview-col-text col-sm-8 col-xs-12">
@@ -198,12 +275,14 @@
     </footer>
     <!-- ! /footer -->
 
-
     <!-- ^  jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="js/jquery-3.6.0.min.js"></script>
 
     <!-- ^ bootstrap.js 3.4.1 -->
     <script src="js/bootstrap-3.4.1.min.js"></script>
+
+    <!-- ^ smooth-scrool.js -->
+    <script src="js/smooth-scroll.js"></script>
 
     <!-- ^ 刷新回到页面顶部 -->
     <script type="text/javascript">

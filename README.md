@@ -3,8 +3,8 @@
 <center>
 
 # Dancing in the snow
-**Version:** 1.0.1
-**update:** 01/05/29 02:18
+**Version:** 1.1.0
+**update:** 01/05/30 00:43
 
 </center>
 
@@ -39,6 +39,17 @@
   - <font color="red">出现的问题的，图片部分的悬浮效果，悬浮范围不稳定</font>
 </details>
 
+<strong>1.1.0更新内容</strong>
+
+- 中间主体呈现文章摘要
+  - 图片大小设为父级的80%等比缩放
+  - 修改了`#preview`的`margin-top`，使得离导航狼更远一些
+- 页面中的平滑滚动
+  - 引入插件`smooth-scroll.js`，并在`scroll.js`中对其进行初始化，实现页面内的锚点跳转为滚动方式
+- 导航栏
+  - 导航狼的列表里姑且先放了登录注册等字和图标
+
+---
 
 ## 官网主页的文章摘要写法
 
@@ -88,8 +99,7 @@
 </div>
 ```
 </details>
-
-### 解释说明
+<br>
 
 - `class="preview-row"` preview部分的行。设置了圆角，背景颜色，溢出隐藏
 - `class="preview-col"` preview部分的列。设置l高度上限。
@@ -98,6 +108,24 @@
 - `class="preview-title"` 设置了标题字体。
 - `class="preview-text"` 文字列中真正呈现文字的部分。
 - `class="preview-reverse"` 针对图片列的图片翻转。
+
+----
+
+## 页面中的平滑滚动
+
+- 需要引入插件`smooth-scroll.js`
+- 并对齐进行初始化`smoothScroll.init();`
+- 只需要在按钮或`a`标签中添加`data-scroll`，如：
+
+```
+<a data-scroll href="#rig">Register</a>
+<div id="rig"></div>
+
+<script src="js/smooth-scroll.js"></script>
+<script>
+smoothScroll.init();
+</script>
+```
 
 ----
 
