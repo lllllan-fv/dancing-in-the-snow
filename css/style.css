@@ -1,0 +1,160 @@
+body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+/* ! ************************** home-loading ******************************* */
+
+.home-loading {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../img/loading.gif) center no-repeat #fff;
+}
+
+
+/* ! *************************** header *********************************** */
+
+.header-left {
+    /* ! 溢出隐藏 */
+    overflow: hidden;
+    width: 40%;
+    float: left;
+    background-color: #45aaf2;
+    position: absolute;
+    height: 100%;
+}
+
+.header-right {
+    background: url(../img/header_right_background.jpg);
+    width: 60%;
+    height: 100%;
+    float: right;
+    background-size: cover;
+    background-position: 22%;
+    background-color: #030303;
+    background-repeat: no-repeat;
+}
+
+.header-text {
+    color: #ffffff;
+    margin-top: 20%;
+    padding-right: 4%;
+    text-align: right;
+}
+
+.header-welcome {
+    font-family: 'Lucida Handwriting', Cursive;
+    font-size: 1.98em;
+}
+
+.header-title {
+    font-family: 'Papyrus', Fantasy;
+    font-weight: 900;
+    color: rgb(197, 197, 197);
+}
+
+.header-author {
+    font-size: 1.75em;
+    letter-spacing: 7px;
+    word-spacing: 6px;
+}
+
+
+/* ! ***************************** navigation ****************************** */
+
+#navigation {
+    background-color: #000;
+}
+
+.nav-logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: visible;
+}
+
+.nav-logo img {
+    transition: .5s;
+}
+
+.nav-logo img:hover {
+    transform: rotate(15deg) scale(1.5);
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+
+/* ! **************************** inforamtion ************************** */
+
+#information {
+    width: 100%;
+    border: none;
+    overflow: hidden;
+    background-color: #030303;
+    color: #fff;
+}
+
+.info-bottom {
+    padding-top: 1em;
+    text-align: center;
+}
+
+.info-bottom a {
+    color: #45aaf2;
+}
+
+.info-bottom-mid {
+    background-color: #45aaf2;
+}
+
+
+/* ! **************************** footer ******************************* */
+
+footer {
+    overflow: hidden;
+    width: 100%;
+    background: #3a3a3a;
+    color: #fff;
+    /* padding-top: 1em; */
+}
+
+footer a {
+    color: rgb(100, 100, 100);
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #45aaf2;
+}
+
+.copyright {
+    margin: 0;
+    padding: 10px 0px;
+    float: left;
+}
+
+.designed {
+    margin: 0;
+    padding: 10px 0px;
+    float: right;
+}
+
+.designed a:hover {
+    color: #45aaf2;
+}
