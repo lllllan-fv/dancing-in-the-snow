@@ -8,4 +8,4 @@ git commit -m "clarifications"
 
 # 推送
 
-git pull origin master
+git push origin master
