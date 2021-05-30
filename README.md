@@ -3,8 +3,8 @@
 <center>
 
 # Dancing in the snow
-**Version:** 1.1.1
-**update:** 01/05/30 01:14
+**Version:** 1.1.2
+**update:** 01/05/30 10:50
 
 </center>
 
@@ -42,7 +42,6 @@
 <details>
   <summary><strong>1.1.0更新内容</strong></summary>
 
-
 - 中间主体呈现文章摘要
   - 图片大小设为父级的80%等比缩放
   - 修改了`#preview`的`margin-top`，使得离导航狼更远一些
@@ -52,12 +51,18 @@
   - 导航狼的列表里姑且先放了登录注册等字和图标
 </details>
 
-<strong>1.1.1更新内容</strong>
+<details>
+  <summary><strong>1.1.1更新内容</strong></summary>
 
 - `preview.css`
   - 将`#preview`的`margin-top`改为`padding`，使得锚点跳转时不遮盖
 - `style.css`
   - 修改了导航栏左边logo的鼠标悬浮区域
+</details>
+
+<strong>1.1.2更新内容</strong>
+
+- 课程设计书`book.html`
 
 ---
 
