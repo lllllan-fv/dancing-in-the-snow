@@ -1,0 +1,18 @@
+.page {
+    background-color: #ecf0f1;
+    padding: 4em 4em 4em 4em;
+    margin: 0 auto;
+    margin-top: 7em;
+    margin-bottom: 5em;
+    width: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/* ! *********************** footer ************************ */
+
+footer {
+    position: fixed;
+    bottom: 0;
+}

@@ -54,11 +54,13 @@
         </div>
         <!--  /.header-left  -->
 
-        <div class="header-right"> </div>
+        <div class="header-right"></div>
         <!--  /.header-right  -->
 
     </header>
     <!-- ! /header  -->
+
+    <!-- <div class="bg"></div> -->
 
     <!-- ! navigation -->
     <section id="navigation">
@@ -300,6 +302,20 @@
 
     <!-- # scroll -->
     <script type="text/javascript" src="js/scroll.js"></script>
+
+    <!-- # js -->
+    <script type="text/javascript">
+        console.log("js test");
+        $("h2.preview-title").click(function() {
+            console.log("h2 click");
+            //要发送的参数
+            let params = {
+                "article_id": 1,
+            };
+            window["filter"] = params;
+            window.open("article.html");
+        });
+    </script>
 
     <!-- # js -->
     <script type="text/javascript" src=""></script>

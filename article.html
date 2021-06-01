@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dancing in the snow</title>
+
+    <!-- ! 主页logo -->
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+
+    <!-- ^ Bootstrap 3.4.1 -->
+    <link href="css/bootstrap-3.4.1.min.css" rel="stylesheet">
+
+    <!-- ^ animate 4.1.1 -->
+    <link href="css/animate.css" rel="stylesheet">
+
+    <!-- ^ wow 1.1.2 -->
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+    <!-- ^ 图标库 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- ^ markdwon -->
+    <link href="css/simplemde-1.11.2.min.css" rel="stylesheet">
+
+    <!-- # home -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- # css -->
+    <link rel="stylesheet" href="css/article.css">
+
+    <!-- # css -->
+    <link rel="stylesheet" href="">
+
+</head>
+
+<body>
+
+    <!-- ! navigation -->
+    <section id="navigation" class="fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2 text-left">
+                    <div class="nav-logo"><a data-scroll href="">DS<span>.</span></a></div>
+                </div>
+                <div class="col-xs-10 text-right">
+                    <div>
+                        <a href="#" data-placement="bottom" title="Menu" class="nav-menu" data-toggle="dropdown"><i class="col-red bi bi-list" style="color: #45aaf2;"></i></a>
+                        <div class="dropdown-menu">
+                            <div class="arrow-up"></div>
+                            <ul>
+                                <li>
+                                    <a data-scroll href="">Register<i class="bi bi-pencil-fill"></i></a>
+                                </li>
+                                <li id="login-btn">
+                                    <a data-scroll href="">Login<i class="bi bi-box-arrow-in-left"></i></a>
+                                </li>
+                                <li>
+                                    <a data-scroll href="">Logout<i class="bi bi-box-arrow-right"></i></a>
+                                </li>
+                                <li>
+                                    <a data-scroll href="">Home<i class="bi bi-house-fill"></i></a>
+                                </li>
+                                <li>
+                                    <a data-scroll href="">Commend<i class="bi bi-book-fill"></i></a>
+                                </li>
+                                <li>
+                                    <a data-scroll href="">About<i class="bi bi-person-circle"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ! /navigation -->
+
+    <div class="bg"></div>
+
+    <div class="page"></div>
+
+    <div class="imgsection img1">IMG1</div>
+    <div class="imgsection img2">IMG2</div>
+    <div class="imgsection img3">IMG3</div>
+
+    <!-- ! footer copy -->
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-6 col-xs-12">
+                    <p class="copyright wow animate__animated animate__lightSpeedInRight" data-wow-delay="1.5s">© Copyright 2021. More informations <a href="" title="更多信息">click here</a></p>
+                    <!--  /.copyright  -->
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <p class="designed wow animate__animated animate__lightSpeedInLeft" data-wow-delay="1.5s">Designed and Developed by lllllan</p>
+                    <!--  /.designed  -->
+                </div>
+
+            </div>
+            <!--  /.row  -->
+        </div>
+        <!--  /.container  -->
+    </footer>
+    <!-- ! /footer -->
+
+    <!-- ^  jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- ^ bootstrap.js 3.4.1 -->
+    <script src="js/bootstrap-3.4.1.min.js"></script>
+
+    <!-- ^ smooth-scrool.js -->
+    <script src="js/smooth-scroll.js"></script>
+    <script type="text/javascript">
+        smoothScroll.init();
+    </script>
+
+    <!-- ^ 刷新回到页面顶部 -->
+    <script type="text/javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <!-- ^ markdown to html -->
+    <script src="js/parser.js"></script>
+
+    <!-- ^ markdwon -->
+    <script src="js/simplemde-1.11.2.min.js"></script>
+
+    <!-- # js -->
+    <script type="text/javascript">
+        // console.log("receive test");
+
+        // let receive = window.opener["filter"];
+        // let article_id = receive["article_id"];
+
+        // console.log(article_id);
+
+        var xmlHttp = null;
+
+        function getMD() {
+            if (window.ActiveXObject) {
+                // IE6, IE5 浏览器执行代码
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            } else if (window.XMLHttpRequest) {
+                // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                xmlHttp = new XMLHttpRequest();
+            }
+            //2.如果实例化成功，就调用open（）方法：
+            if (xmlHttp != null) {
+                xmlHttp.open("get", "article/test.md", true);
+                xmlHttp.send();
+                xmlHttp.onreadystatechange = doResult; //设置回调函数                 
+            }
+
+            function doResult() {
+                if (xmlHttp.readyState == 4) { //4表示执行完成
+                    if (xmlHttp.status == 200) { //200表示执行成功
+                        // console.log(xmlHttp.responseText);
+                        mdtext = xmlHttp.responseText;
+                        var parser = new HyperDown,
+                            html = parser.makeHtml(xmlHttp.responseText);
+                        console.log(html);
+
+                        $('.page').append(html);
+                    }
+                }
+            }
+        }
+
+
+        getMD();
+    </script>
+
+    <!-- # js -->
+    <script type="text/javascript" src=""></script>
+
+</body>
+
+</html>

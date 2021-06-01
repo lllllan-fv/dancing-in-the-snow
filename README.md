@@ -3,8 +3,8 @@
 <center>
 
 # Dancing in the snow
-**Version:** 1.1.2
-**update:** 01/05/30 10:50
+**Version:** 2.0.0
+**update:** 01/06/02 01:23
 
 </center>
 
@@ -26,6 +26,7 @@
 - 页脚
   - 信息一栏和版权一栏
   - 基本算是完工，不再大改
+- 页面上尝试了滚动视差的图片，还在试验阶段
 
 </details>
 
@@ -60,10 +61,27 @@
   - 修改了导航栏左边logo的鼠标悬浮区域
 </details>
 
-<strong>1.1.2更新内容</strong>
+<details>
+  <summary><strong>1.1.2更新内容</strong></summary>
 
 - 课程设计书`book.html`
+</details>
 
+<br>
+
+<strong>2.0.0更新内容</strong>
+
+- 主页样式
+  - 添加了背景图片
+  - 更改了一些容器的颜色
+- `artilce.html`
+  - 尝试从主页链接到文章页，并传递`article_id`参数
+- simplemde
+  - markdown编辑器
+  - `simplemde-1.11.2.min.css`
+  - `simplemde-1.11.2.min.js`
+- markdown渲染
+  - `parser.js`
 ---
 
 ## 官网主页的文章摘要写法
@@ -149,3 +167,88 @@ smoothScroll.init();
 - [bootstrap图标库](https://icons.bootcss.com/#styling)
 - 添加图标字体`<i class="bi-alarm"></i>`
 - 使用font-size和color更改图标外观`<i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>`
+
+----
+
+## 打开新页面并传递参数
+
+- 父页面添加按钮点击事件，事件内容里添加
+```
+let params = {
+  "article_id": id,
+};
+window["filter"] = params;
+window.open("https://blog.csdn.net/weekdawn");
+
+```
+
+- 子页面js中接受数据
+```
+let receive = window.opener["filter"];
+let article_id = receive["article_id"];
+```
+
+## simplemde 使用
+
+- 引入对应css和js
+```
+<body>
+<textarea></textarea>
+
+<div class="MyID"></div>
+</body>
+
+<script>
+<!-- ! 新建编辑框 -->
+  var simplemde = new SimpleMDE({
+      element: $("#MyID")[0],
+      <!-- ! 内容初始化 -->
+      initialValue: "Hello world!",
+  });
+
+<!-- ! 编辑框监听 -->
+  simplemde.codemirror.on("change", function() {
+      console.log(simplemde.value());
+
+<!-- ! 通过另一插件进行渲染 -->
+      var parser = new HyperDown,
+          html = parser.makeHtml(simplemde.value());
+      console.log(html);
+
+  });
+</script>
+```
+
+## AJAX读取文件内容
+
+```
+var xmlHttp = null;
+if (window.ActiveXObject) {
+    <!-- ! IE6, IE5 浏览器执行代码 -->
+    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+} else if (window.XMLHttpRequest) {
+    <!-- ! IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码 -->
+    xmlHttp = new XMLHttpRequest();
+}
+<!-- ! 2.如果实例化成功，就调用open（）方法： -->
+if (xmlHttp != null) {
+  <!-- ^ 路径 -->
+    xmlHttp.open("get", "article/test.md", true);
+    xmlHttp.send();
+    xmlHttp.onreadystatechange = doResult; //设置回调函数                 
+}
+
+function doResult() {
+    if (xmlHttp.readyState == 4) { //4表示执行完成
+        if (xmlHttp.status == 200) { //200表示执行成功
+            console.log(xmlHttp.responseText);
+<!-- ! markdown渲染 -->
+            var parser = new HyperDown,
+                html = parser.makeHtml(xmlHttp.responseText);
+            console.log(html);
+
+            $('body').append(html);
+        }
+    }
+}
+```
