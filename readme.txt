@@ -10,7 +10,7 @@ git commit -m "clarifications"
 
 ## 推送
 
-git push origin master
+git push gitee master
 
 # 云服务器
 
