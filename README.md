@@ -69,7 +69,8 @@
 
 <br>
 
-<strong>2.0.0更新内容</strong>
+<details>
+  <summary><strong>2.0.0更新内容</strong></summary>
 
 - 主页样式
   - 添加了背景图片
@@ -82,6 +83,15 @@
   - `simplemde-1.11.2.min.js`
 - markdown渲染
   - `parser.js`
+</details>
+
+<strong>2.1.0更新内容</strong>
+
+- 文章页面
+  - 新增页头，包含视差滚动的背景、标题、作者
+  - 动态添加文章内容详见`article.html`下的js部分
+  - 勉强对页头部分设置了媒体查询
+
 ---
 
 ## 官网主页的文章摘要写法
@@ -250,5 +260,24 @@ function doResult() {
             $('body').append(html);
         }
     }
+}
+```
+
+## 滚动视差
+
+```
+css:
+{
+  height: 100vh;
+  background: rgba(0, 0, 0, .7);
+  color: #fff;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 20vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+
+  background-image: url(../img/OIP.jpg);
 }
 ```

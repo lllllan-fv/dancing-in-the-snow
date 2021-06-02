@@ -1,10 +1,67 @@
-.page {
-    background-color: #ecf0f1;
+.page-head {
+    overflow: hidden;
+    height: 45vh;
+    padding-top: 6em;
+    background-image: url(../img/header_right_background.jpg);
+}
+
+.page-title {
+    font-family: "Brush Script MT", Cursive;
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 9em;
+}
+
+.page-author {
+    font-family: "Papyrus", Fantasy;
+    color: #c44569;
+    text-align: center;
+    font-size: 2em;
+}
+
+@media screen and (max-width: 500px),
+screen and (max-height: 900px) {
+    .page-head {
+        padding-top: 8em;
+    }
+    .page-title {
+        font-size: 5em;
+    }
+}
+
+@media screen and (max-width:420px),
+screen and (max-height: 700px) {
+    .page-head {
+        padding-top: 8em;
+    }
+    .page-title {
+        font-size: 3em;
+    }
+    .page-author {
+        font-size: 1em;
+    }
+}
+
+.page-author a {
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bolder;
+    color: #a5b1c2;
+}
+
+.page-author a:hover {
+    font-weight: bolder;
+    color: #fa8231;
+}
+
+.page-body {
+    background-color: #ffffff;
     padding: 4em 4em 4em 4em;
     margin: 0 auto;
     margin-top: 7em;
     margin-bottom: 5em;
-    width: 80%;
+    width: 60%;
     border-radius: 10px;
     overflow: hidden;
 }

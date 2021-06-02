@@ -42,6 +42,16 @@
 
 <body>
 
+
+    </div>
+    <div class="imgsection page-head">
+        <div class="page-title animate__animated"></div>\
+        <div class="page-author">
+            <p></p>
+            <a></a>
+        </div>
+    </div>
+
     <!-- ! navigation -->
     <section id="navigation" class="fixed-top">
         <div class="container">
@@ -82,13 +92,11 @@
     </section>
     <!-- ! /navigation -->
 
-    <div class="bg"></div>
+    <!-- <div class="bg"></div> -->
 
-    <div class="page"></div>
+    <div class="page-body">
+    </div>
 
-    <div class="imgsection img1">IMG1</div>
-    <div class="imgsection img2">IMG2</div>
-    <div class="imgsection img3">IMG3</div>
 
     <!-- ! footer copy -->
     <footer>
@@ -176,7 +184,12 @@
                             html = parser.makeHtml(xmlHttp.responseText);
                         console.log(html);
 
-                        $('.page').append(html);
+                        $('.page-title').html("the title");
+                        $('.page-title').attr("article_id", "1");
+                        $('.page-author a').html("lllllan");
+                        $('.page-author a').attr("author", "lllllan");
+                        $('.page-author p').html("posted @ 2021-06-13 01:56");
+                        $('.page-body').html(html);
                     }
                 }
             }
@@ -185,6 +198,9 @@
 
         getMD();
     </script>
+
+    <!-- # article.js -->
+    <script type="text/javascript" src="js/article.js"></script>
 
     <!-- # js -->
     <script type="text/javascript" src=""></script>
