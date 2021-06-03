@@ -35,6 +35,9 @@
     <!-- # home -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- # edit.css -->
+    <link rel="stylesheet" href="css/edit.css">
+
     <!-- # css -->
     <link rel="stylesheet" href="">
 
@@ -43,41 +46,13 @@
 <body target="_blank">
     <!-- ! navigation -->
     <section id="navigation">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-2 text-left">
-                    <div class="nav-logo"><a data-scroll href="#navigation">DS<span>.</span></a></div>
-                </div>
-                <div class="col-xs-10 text-right">
-                    <div>
-                        <a href="#" data-placement="bottom" title="Menu" class="nav-menu" data-toggle="dropdown"><i class="col-red bi bi-list" style="color: #45aaf2;"></i></a>
-                        <div class="dropdown-menu">
-                            <div class="arrow-up"></div>
-                            <ul>
-                                <li>
-                                    <a data-scroll href="">Register<i class="bi bi-pencil-fill"></i></a>
-                                </li>
-                                <li id="login-btn">
-                                    <a data-scroll href="">Login<i class="bi bi-box-arrow-in-left"></i></a>
-                                </li>
-                                <li>
-                                    <a data-scroll href="">Logout<i class="bi bi-box-arrow-right"></i></a>
-                                </li>
-                                <li>
-                                    <a data-scroll href="index.html">Home<i class="bi bi-house-fill"></i></a>
-                                </li>
-                                <li>
-                                    <a data-scroll href="">Commend<i class="bi bi-book-fill"></i></a>
-                                </li>
-                                <li>
-                                    <a data-scroll href="">About<i class="bi bi-person-circle"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <input type="text" class="text-title" placeholder="请输入文章标题">
+
+        <a role="button" class="btn btn-save">保存草稿</a>
+
+        <a role="button" class="btn btn-publish">发布文章</a>
+
+        <img src="img/lllllan.png" class="avator img-circle">
     </section>
     <!-- ! /navigation -->
 
@@ -128,10 +103,16 @@
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
+
+        $('button').click(function() {
+            // window.open("article.html", '_self');
+        })
     </script>
 
     <!-- # scroll -->
-    <script type="text/javascript" src="js/scroll.js"></script>
+    <script type="text/javascript">
+        smoothScroll.init();
+    </script>
 
     <!-- # js -->
     <script type="text/javascript" src=""></script>

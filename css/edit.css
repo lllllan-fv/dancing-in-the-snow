@@ -1,0 +1,80 @@
+#navigation {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#navigation * {
+    margin-left: 1em;
+}
+
+* {
+    overflow: hidden;
+}
+
+.text-title {
+    width: 70%;
+    height: 40px;
+}
+
+.btn {
+    min-width: 80px;
+    width: 10%;
+    height: 40px;
+    padding-top: 8px;
+    border-radius: 9999px;
+}
+
+.btn-save {
+    background-color: #fff;
+    border-color: #ff3838;
+    transition: .5s;
+}
+
+.btn-save:hover {
+    background-color: #fbc531;
+}
+
+.btn-publish {
+    background-color: #74b9ff;
+    transition: .5s;
+}
+
+.btn-publish:hover {
+    background-color: #0984e3;
+}
+
+.avator {
+    height: 40px;
+    cursor: pointer;
+}
+
+
+/* # ******** ipad ********* */
+
+@media screen and (max-width:1400px),
+screen and (max-height: 900px) {
+    .text-title {
+        width: 60%;
+    }
+}
+
+
+/* # ******** phone ********* */
+
+@media screen and (max-width:550px),
+screen and (max-height: 700px) {
+    #navigation * {
+        margin: auto;
+        margin-bottom: 1em;
+    }
+    .text-title {
+        width: 100%;
+    }
+    .btn {
+        width: 40%;
+    }
+}
+
+textarea {
+    min-height: 100vh;
+}
