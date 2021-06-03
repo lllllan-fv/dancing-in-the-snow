@@ -184,6 +184,9 @@
                             html = parser.makeHtml(xmlHttp.responseText);
                         console.log(html);
 
+                        // ! 解决markdown渲染字体过小
+                        html = "<font size=4>" + html + "</font>";
+
                         $('.page-title').html("the title");
                         $('.page-title').attr("article_id", "1");
                         $('.page-author a').html("lllllan");

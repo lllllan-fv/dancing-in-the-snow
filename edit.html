@@ -32,7 +32,7 @@
     <!-- ^ markdwon -->
     <link href="css/simplemde-1.11.2.min.css" rel="stylesheet">
 
-    <!-- # home-loading -->
+    <!-- # home -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- # css -->
@@ -40,14 +40,13 @@
 
 </head>
 
-<body>
-
+<body target="_blank">
     <!-- ! navigation -->
     <section id="navigation">
         <div class="container">
             <div class="row">
                 <div class="col-xs-2 text-left">
-                    <div class="nav-logo"><a data-scroll href="">DS<span>.</span></a></div>
+                    <div class="nav-logo"><a data-scroll href="#navigation">DS<span>.</span></a></div>
                 </div>
                 <div class="col-xs-10 text-right">
                     <div>
@@ -82,27 +81,8 @@
     </section>
     <!-- ! /navigation -->
 
-    <!-- ! footer copy -->
-    <footer>
-        <div class="container">
-            <div class="row">
-
-                <div class="col-sm-6 col-xs-12">
-                    <p class="copyright wow animate__animated animate__lightSpeedInRight" data-wow-delay="1.5s">© Copyright 2021. More informations <a href="" title="更多信息">click here</a></p>
-                    <!--  /.copyright  -->
-                </div>
-
-                <div class="col-sm-6 col-xs-12">
-                    <p class="designed wow animate__animated animate__lightSpeedInLeft" data-wow-delay="1.5s">Designed and Developed by lllllan</p>
-                    <!--  /.designed  -->
-                </div>
-
-            </div>
-            <!--  /.row  -->
-        </div>
-        <!--  /.container  -->
-    </footer>
-    <!-- ! /footer -->
+    <textarea></textarea>
+    <div class="MyID"></div>
 
     <!-- ^  jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="js/jquery-3.6.0.min.js"></script>
@@ -122,6 +102,7 @@
     <script src="js/simplemde-1.11.2.min.js"></script>
     <script>
         var simplemde = new SimpleMDE({
+            autofocus: true,
             element: $("#MyID")[0],
             initialValue: "Hello world!",
         });

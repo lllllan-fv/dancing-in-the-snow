@@ -4,7 +4,7 @@
 
 # Dancing in the snow
 **Version:** 2.0.0
-**update:** 01/06/02 01:23
+**update:** 01/06/03 17:58
 
 </center>
 
@@ -85,12 +85,19 @@
   - `parser.js`
 </details>
 
-<strong>2.1.0更新内容</strong>
+<details>
+  <summary><strong>2.0.0更新内容</strong></summary>
 
 - 文章页面
   - 新增页头，包含视差滚动的背景、标题、作者
   - 动态添加文章内容详见`article.html`下的js部分
   - 勉强对页头部分设置了媒体查询
+</details>
+
+<strong>2.0.1更新内容</strong>
+
+- 对文章页面的呈现文章部分添加了媒体查询
+- edit页面雏形
 
 ---
 

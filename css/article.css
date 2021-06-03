@@ -20,29 +20,6 @@
     font-size: 2em;
 }
 
-@media screen and (max-width: 500px),
-screen and (max-height: 900px) {
-    .page-head {
-        padding-top: 8em;
-    }
-    .page-title {
-        font-size: 5em;
-    }
-}
-
-@media screen and (max-width:420px),
-screen and (max-height: 700px) {
-    .page-head {
-        padding-top: 8em;
-    }
-    .page-title {
-        font-size: 3em;
-    }
-    .page-author {
-        font-size: 1em;
-    }
-}
-
 .page-author a {
     text-transform: uppercase;
     cursor: pointer;
@@ -64,6 +41,40 @@ screen and (max-height: 700px) {
     width: 60%;
     border-radius: 10px;
     overflow: hidden;
+}
+
+
+/* # ******** large phone ********* */
+
+@media screen and (max-width: 500px),
+screen and (max-height: 900px) {
+    .page-head {
+        padding-top: 8em;
+    }
+    .page-title {
+        font-size: 5em;
+    }
+    .page-body {
+        width: 80%;
+        padding: 3em 3em 3em 3em;
+    }
+}
+
+
+/* # ******** phone ********* */
+
+@media screen and (max-width:420px),
+screen and (max-height: 700px) {
+    .page-title {
+        font-size: 3em;
+    }
+    .page-author {
+        font-size: 1em;
+    }
+    .page-body {
+        width: 80%;
+        padding: 2em 2em 2em 2em;
+    }
 }
 
 
