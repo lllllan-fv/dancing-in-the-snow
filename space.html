@@ -32,7 +32,7 @@
     <!-- ^ markdwon -->
     <link href="css/simplemde-1.11.2.min.css" rel="stylesheet">
 
-    <!-- # home -->
+    <!-- # home-loading -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- # css -->
@@ -46,7 +46,7 @@
 <body id="top">
 
     <div class="imgsection page-head">
-        <div class="page-title animate__animated"></div>
+        <div class="page-title animate__animated">lllllan的博客</div>
         <div class="page-info"></div>
     </div>
 
@@ -90,11 +90,25 @@
     </section>
     <!-- ! /navigation -->
 
-    <!-- <div class="bg"></div> -->
 
-    <div class="page-body">
+    <div class="page-body page-70">
+        <div class="page-article">
+            <div class="article-title">文章标题</div>
+            <div class="article-text">文章摘要</div>
+            <div class="article-details">
+                <div class="details-time">
+                    <i class="bi bi-calendar-check"></i>2021/06/01
+                </div>
+                <a class="details-more">阅读全文<i class="bi bi-chevron-double-right"></i></a>
+            </div>
+        </div>
+
+        <div class="page-user">
+            <img src="img/lllllan.png" class="img-circle user-ava">
+            <h2 class="user-name">llllllan</h2>
+            <p class="user-info">一个在役ACMer菜鸡，正在努力做Web作业。</p>
+        </div>
     </div>
-
 
     <!-- ! footer copy -->
     <footer>
@@ -126,8 +140,10 @@
 
     <!-- ^ smooth-scrool.js -->
     <script src="js/smooth-scroll.js"></script>
-    <script type="text/javascript">
-        smoothScroll.init();
+
+
+    <!-- ^ markdown to html -->
+    <script src="js/parser.js">
     </script>
 
     <!-- ^ 刷新回到页面顶部 -->
@@ -141,14 +157,10 @@
         }
     </script>
 
-    <!-- ^ markdown to html -->
-    <script src="js/parser.js"></script>
-
-    <!-- ^ markdwon -->
-    <script src="js/simplemde-1.11.2.min.js"></script>
-
-    <!-- # js -->
-    <script type="text/javascript" src="js/getArticle.js"></script>
+    <!-- # scroll -->
+    <script type="text/javascript">
+        smoothScroll.init();
+    </script>
 
     <!-- # article.js -->
     <script type="text/javascript" src="js/page.js"></script>

@@ -1,0 +1,170 @@
+.page-head {
+    overflow: hidden;
+    height: 40vh;
+    padding-top: 10em;
+    background-image: url(../img/header_right_background.jpg);
+}
+
+.page-title {
+    color: #fff;
+    font-family: "Brush Script MT", Cursive;
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 6em;
+}
+
+.page-body {
+    background-color: #ffffff;
+    padding: 4em 4em 4em 4em;
+    margin: 0 auto;
+    margin-top: 7em;
+    margin-bottom: 5em;
+    width: 60%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.page-body a {
+    color: #0984e3;
+}
+
+.page-body a:hover {
+    color: #b2bec3;
+}
+
+.page-70 {
+    width: 70%;
+    background-color: transparent;
+}
+
+.page-user {
+    float: right;
+    width: 20%;
+    text-align: center;
+    padding: 1em 2em 1em 2em;
+    overflow: hidden;
+    border-bottom: 6px solid #45aaf2;
+}
+
+.page-user img {
+    width: 80%;
+}
+
+.page-article {
+    float: left;
+    width: 75%;
+    margin-right: 5%;
+    padding: 1em 1em 1em 1em;
+    overflow: hidden;
+}
+
+.body-title {
+    border-bottom: 2px solid #f1f2f6;
+}
+
+.body-title h2 {
+    margin-bottom: 20px;
+}
+
+.body-form {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 40%;
+    font-size: 15px;
+}
+
+.body-form span {
+    color: red;
+    /* margin-right: 2px; */
+}
+
+.body-form button {
+    width: 140px;
+    transition: .5s;
+}
+
+
+/* # ******** ipad ********* */
+
+@media screen and (max-width:1400px),
+screen and (max-height: 900px) {
+    .page-head {
+        padding-top: 12em;
+    }
+    .page-title {
+        font-size: 5em;
+    }
+    .page-body {
+        width: 80%;
+        padding: 3em 3em 3em 3em;
+    }
+}
+
+
+/* # ******** phone ********* */
+
+@media screen and (max-width:550px),
+screen and (max-height: 700px) {
+    .page-head {
+        padding-top: 10em;
+        /* height: 35vh; */
+    }
+    .page-title {
+        font-size: 3em;
+    }
+    .page-body {
+        width: 80%;
+        padding: 2em 2em 2em 2em;
+    }
+}
+
+
+/* ! ******************** page-article***************************** */
+
+.page-article {
+    color: #747d8c;
+    border-bottom: 2px double #b2bec3;
+}
+
+.article-title {
+    color: #636e72;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.article-text {
+    font-size: 1em;
+    line-height: 1.5;
+    word-spacing: 100px;
+    margin-bottom: 10px;
+}
+
+.details-time {
+    float: left;
+}
+
+.details-more {
+    cursor: pointer;
+    float: right;
+}
+
+a.details-more {
+    color: #747d8c;
+}
+
+a.details-more:hover {
+    color: #45aaf2;
+}
+
+.article-details i {
+    margin-right: 5px;
+}
+
+
+/* ! *********************** footer ************************ */
+
+footer {
+    position: fixed;
+    bottom: 0;
+}

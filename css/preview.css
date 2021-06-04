@@ -110,6 +110,10 @@
     font-weight: 900;
 }
 
+h2.preview-title {
+    cursor: pointer;
+}
+
 .preview-text {
     height: 100%;
     overflow: hidden;

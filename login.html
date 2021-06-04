@@ -32,7 +32,7 @@
     <!-- ^ markdwon -->
     <link href="css/simplemde-1.11.2.min.css" rel="stylesheet">
 
-    <!-- # home -->
+    <!-- # home-loading -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- # css -->
@@ -45,13 +45,8 @@
 
 <body id="top">
 
-    <div class="imgsection page-head">
-        <div class="page-title animate__animated"></div>
-        <div class="page-info"></div>
-    </div>
-
     <!-- ! navigation -->
-    <section id="navigation" class="fixed-top">
+    <section id="navigation">
         <div class="container">
             <div class="row">
                 <div class="col-xs-2 text-left">
@@ -73,7 +68,7 @@
                                     <a data-scroll href="">Logout<i class="bi bi-box-arrow-right"></i></a>
                                 </li>
                                 <li>
-                                    <a data-scroll href="">Home<i class="bi bi-house-fill"></i></a>
+                                    <a data-scroll href="index.html">Home<i class="bi bi-house-fill"></i></a>
                                 </li>
                                 <li>
                                     <a data-scroll href="">Commend<i class="bi bi-book-fill"></i></a>
@@ -90,11 +85,63 @@
     </section>
     <!-- ! /navigation -->
 
-    <!-- <div class="bg"></div> -->
-
     <div class="page-body">
+        <div class="body-title">
+            <h2>Register Page</h2>
+        </div>
+        <div class="body-form">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="form-nickname" class="col-sm-4 control-label"><span>*</span>Nick Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="form-nickname" placeholder="3 - 20 characters, unique">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="form-pwd" class="col-sm-4 control-label"><span>*</span>Password</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" id="form-pwd" placeholder="6 - 20 characters">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="form-checkpwd" class="col-sm-4 control-label"><span>*</span>Password</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" id="form-checkpwd" placeholder="Repeat your password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="form-ava" class="col-sm-4 control-label">自定义头像</label>
+                    <div class="col-sm-8">
+                        <input type="file" id="form-ava">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="form-realname" class="col-sm-4 control-label">Real Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="form-realname" placeholder="Your real name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="form-email" class="col-sm-4 control-label">Email</label>
+                    <div class="col-sm-8">
+                        <input type="email" class="form-control" id="form-email" placeholder="Your Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <div class="checkbox">
+                            <label><input type="checkbox">我已阅读并同意</label><a>《用户须知》</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <button type="submit" class="btn btn-info">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-
 
     <!-- ! footer copy -->
     <footer>
@@ -126,8 +173,30 @@
 
     <!-- ^ smooth-scrool.js -->
     <script src="js/smooth-scroll.js"></script>
-    <script type="text/javascript">
-        smoothScroll.init();
+
+
+    <!-- ^ markdown to html -->
+    <script src="js/parser.js">
+    </script>
+
+    <!-- ^ markdwon -->
+    <script src="js/simplemde-1.11.2.min.js"></script>
+    <script>
+        var simplemde = new SimpleMDE({
+            element: $("#MyID")[0],
+            initialValue: "Hello world!",
+        });
+
+        simplemde.codemirror.on("change", function() {
+            console.log(simplemde.value());
+
+            var parser = new HyperDown,
+                html = parser.makeHtml(simplemde.value());
+            console.log(html);
+
+            var parsing = "<?php echo string_tags(html)?>";
+            console.log(parsing);
+        });
     </script>
 
     <!-- ^ 刷新回到页面顶部 -->
@@ -139,19 +208,16 @@
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
+
+        // $("#form-nickname").blur(function() {
+        //     $(this).parent().parent().addClass("has-success");
+        // })
     </script>
 
-    <!-- ^ markdown to html -->
-    <script src="js/parser.js"></script>
-
-    <!-- ^ markdwon -->
-    <script src="js/simplemde-1.11.2.min.js"></script>
-
-    <!-- # js -->
-    <script type="text/javascript" src="js/getArticle.js"></script>
-
-    <!-- # article.js -->
-    <script type="text/javascript" src="js/page.js"></script>
+    <!-- # scroll -->
+    <script type="text/javascript">
+        smoothScroll.init();
+    </script>
 
     <!-- # js -->
     <script type="text/javascript" src=""></script>

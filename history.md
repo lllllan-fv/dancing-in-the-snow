@@ -3,12 +3,27 @@
 <center>
 
 # Dancing in the snow
-**Version:** 2.1.0
-**update:** 01/06/04 01:01
+**Version:** 2.2.0
+**update:** 01/06/04 17：20
 
 </center>
 
 # 历史版本
+
+## Version 2.2.0
+
+- 2021.6.4 17：20
+
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 取消'edit.css'的全部元素的溢出隐藏 —— 实测发现会禁用md编辑器的编辑
+- 取消`#navigation`的溢出隐藏 —— 直接把下拉列表给隐藏了可还行
+- 将nav栏的DS点击设为返回页面顶部
+- 注册页面的雏形，还有一些校验状态没搞
+
+</details>
 
 ## Version 2.2.0
 

@@ -40,14 +40,14 @@
 
 </head>
 
-<body>
+<body id="top">
 
     <!-- ! navigation -->
     <section id="navigation">
         <div class="container">
             <div class="row">
                 <div class="col-xs-2 text-left">
-                    <div class="nav-logo"><a data-scroll href="">DS<span>.</span></a></div>
+                    <div class="nav-logo"><a data-scroll href="#top">DS<span>.</span></a></div>
                 </div>
                 <div class="col-xs-10 text-right">
                     <div>
@@ -150,7 +150,9 @@
     </script>
 
     <!-- # scroll -->
-    <script type="text/javascript" src="js/scroll.js"></script>
+    <script type="text/javascript">
+        smoothScroll.init();
+    </script>
 
     <!-- # js -->
     <script type="text/javascript" src=""></script>

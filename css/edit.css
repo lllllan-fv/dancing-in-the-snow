@@ -7,8 +7,17 @@
     margin-left: 1em;
 }
 
-* {
-    overflow: hidden;
+input {
+    border-radius: 9999px;
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 1px solid #bdc3c7;
+}
+
+input:focus {
+    outline: 0;
+    border: 1px solid #0984e3;
+    box-shadow: 0px 0px 10px 0px #74b9ff;
 }
 
 .text-title {
@@ -73,8 +82,4 @@ screen and (max-height: 700px) {
     .btn {
         width: 40%;
     }
-}
-
-textarea {
-    min-height: 100vh;
 }

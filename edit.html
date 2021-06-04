@@ -57,7 +57,7 @@
     <!-- ! /navigation -->
 
     <textarea></textarea>
-    <div class="MyID"></div>
+    <div class="mdEditor"></div>
 
     <!-- ^  jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="js/jquery-3.6.0.min.js"></script>
@@ -78,8 +78,8 @@
     <script>
         var simplemde = new SimpleMDE({
             autofocus: true,
-            element: $("#MyID")[0],
-            initialValue: "Hello world!",
+            element: $("#mdEditor")[0],
+            initialValue: "",
         });
 
         simplemde.codemirror.on("change", function() {
