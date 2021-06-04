@@ -189,3 +189,9 @@ css:
   background-image: url(../img/OIP.jpg);
 }
 ```
+
+## Bootstrap-switch
+
+[3.3.4官网](http://ww1.bootstrapswitch.com/)
+
+[使用说明](https://blog.csdn.net/qq_40205116/article/details/84664192)
