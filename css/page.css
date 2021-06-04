@@ -18,8 +18,8 @@
     background-color: #ffffff;
     padding: 4em 4em 4em 4em;
     margin: 0 auto;
-    margin-top: 7em;
-    margin-bottom: 5em;
+    margin-top: 5em;
+    margin-bottom: 7em;
     width: 60%;
     border-radius: 10px;
     overflow: hidden;
@@ -33,9 +33,13 @@
     color: #b2bec3;
 }
 
-.page-70 {
+.body-70 {
     width: 70%;
     background-color: transparent;
+}
+
+.body-50 {
+    width: 50%;
 }
 
 .page-user {
@@ -70,7 +74,7 @@
 .body-form {
     margin: 0 auto;
     margin-top: 20px;
-    width: 40%;
+    width: 80%;
     font-size: 15px;
 }
 
@@ -98,6 +102,9 @@ screen and (max-height: 900px) {
     .page-body {
         width: 80%;
         padding: 3em 3em 3em 3em;
+    }
+    .body-50 {
+        width: 50%;
     }
 }
 

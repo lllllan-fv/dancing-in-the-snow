@@ -3,12 +3,24 @@
 <center>
 
 # Dancing in the snow
-**Version:** 2.2.0
-**update:** 01/06/04 17：20
+**Version:** 2.3.0
+**update:** 01/06/05 00：38
 
 </center>
 
 # 历史版本
+
+## Version 2.3.0
+
+- 2021.6.5 00:38
+
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 新增`login`页面雏形
+</details>
+
 
 ## Version 2.2.0
 
