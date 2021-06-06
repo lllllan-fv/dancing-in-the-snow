@@ -17,6 +17,9 @@
     <!-- ^ Bootstrap 3.4.1 -->
     <link href="css/bootstrap-3.4.1.min.css" rel="stylesheet">
 
+    <!-- ^ bootstrap switch 3.3.4 -->
+    <link href="css/bootstrap-switch-3.3.4.css" rel="stylesheet">
+
     <!-- ^ animate 4.1.1 -->
     <link href="css/animate.css" rel="stylesheet">
 
@@ -35,7 +38,7 @@
     <!-- # home-loading -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- # css -->
+    <!-- # page.css -->
     <link rel="stylesheet" href="css/page.css">
 
     <!-- # css -->
@@ -46,7 +49,7 @@
 <body id="top">
 
     <!-- ! navigation -->
-    <section id="navigation">
+    <section id="navigation" class="fixed-top">
         <div class="container">
             <div class="row">
                 <div class="col-xs-2 text-left">
@@ -67,6 +70,9 @@
                                 <li id="a-logout">
                                     <a>Logout<i class="bi bi-box-arrow-right"></i></a>
                                 </li>
+                                <li id="a-modify">
+                                    <a href="modify.html">Modify Info<i class="bi bi-eraser-fill"></i></a>
+                                </li>
                                 <li id="a-write">
                                     <a href="edit.html">Write<i class="bi bi-pen-fill"></i></a>
                                 </li>
@@ -75,9 +81,6 @@
                                 </li>
                                 <li id="a-space">
                                     <a href="space.html">Space<i class="bi bi-person-circle"></i></a>
-                                </li>
-                                <li id="a-admin">
-                                    <a href="admin.html">Admin<i class="bi bi-gear-wide"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -88,67 +91,33 @@
     </section>
     <!-- ! /navigation -->
 
-    <div class="page-body body-50">
-        <div class="body-title">
-            <h2>Modify Page</h2>
-        </div>
-        <div class="body-form">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="form-userID" class="col-sm-4 control-label">User ID:</label>
-                    <label id="form-userID" class="col-sm-8 form-control-static">007</label>
-                </div>
-                <div class="form-group">
-                    <label for="form-userName" class="col-sm-4 control-label">User Name:</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="form-userName" placeholder="3 - 20 characters, unique">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="form-oldpwd" class="col-sm-4 control-label"><span>*</span> Password:</label>
-                    <div class="col-sm-8">
-                        <input type="password" class="form-control" id="form-oldpwd" placeholder="6 - 20 characters">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="form-pwd" class="col-sm-4 control-label">New Password:</label>
-                    <div class="col-sm-8">
-                        <input type="password" class="form-control" id="form-pwd" placeholder="6 - 20 characters">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="form-checkpwd" class="col-sm-4 control-label">Repeat Password:</label>
-                    <div class="col-sm-8">
-                        <input type="password" class="form-control" id="form-checkpwd" placeholder="Repeat your password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="form-ava" class="col-sm-4 control-label">Avator:</label>
-                    <div class="col-sm-8">
-                        <input type="file" id="form-ava">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="form-email" class="col-sm-4 control-label">Email:</label>
-                    <div class="col-sm-8">
-                        <input type="email" class="form-control" id="form-email" placeholder="Your Email">
-                    </div>
-                </div>
-                <fieldset disabled>
-                    <div class="form-group">
-                        <label for="form-realname" class="col-sm-4 control-label">Real Name:</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="form-realname" placeholder="Tongbo Su">
-                        </div>
-                    </div>
-                </fieldset>
-                <div class="form-group">
-                    <div class="col-sm-offset-4 col-sm-8">
-                        <button type="submit" class="btn btn-info">Modify</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+    <div class="page-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>文章标题</th>
+                    <th>作者</th>
+                    <th>发布时间</th>
+                    <th>上次更新</th>
+                    <th>正常/禁用</th>
+                    <th>存活/删除</th>
+                    <th>公开/私密</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="success">
+                    <th scope="row">1</th>
+                    <td>lllllan的第一篇博客</td>
+                    <td>lllllan</td>
+                    <td>2021/06/01</td>
+                    <td>2021/06/05</td>
+                    <td><input type="checkbox" name="switch" checked></td>
+                    <td><input type="checkbox" name="switch" checked></td>
+                    <td><input type="checkbox" name="switch" checked></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <!-- ! footer copy -->
@@ -179,9 +148,11 @@
     <!-- ^ bootstrap.js 3.4.1 -->
     <script src="js/bootstrap-3.4.1.min.js"></script>
 
+    <!-- ^ bootstrap switch 3.3.4 -->
+    <script src="js/bootstrap-switch-3.3.4.js"></script>
+
     <!-- ^ smooth-scrool.js -->
     <script src="js/smooth-scroll.js"></script>
-
 
     <!-- ^ 刷新回到页面顶部 -->
     <script type="text/javascript">
@@ -193,9 +164,21 @@
             window.scrollTo(0, 1);
         }
 
-        // $("#form-nickname").blur(function() {
-        //     $(this).parent().parent().addClass("has-success");
-        // })
+        $("[name='switch']").bootstrapSwitch({
+            onText: "启用", // 设置ON文本
+            offText: "禁用", // 设置OFF文本
+            onColor: "success", // 设置ON文本颜色(info/success/warning/danger/primary)
+            offColor: "warning", // 设置OFF文本颜色 (info/success/warning/danger/primary)
+            size: "normal", // 设置控件大小,从小到大  (mini/small/normal/large)
+            // 当开关状态改变时触发
+            onSwitchChange: function(event, state) {
+                if (state == true) {
+                    console.log("true");
+                } else {
+                    console.log("false");
+                }
+            }
+        });
     </script>
 
     <!-- # scroll -->

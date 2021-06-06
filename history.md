@@ -3,12 +3,24 @@
 <center>
 
 # Dancing in the snow
-**Version:** 2.4.0
-**update:** 01/06/05 06：38
+**Version:** 3.0.0
+**update:** 01/06/06 23:35
 
 </center>
 
 # 历史版本
+
+## Version 3.0.0
+
+- 2021.6.6 23:35
+
+<details>
+  <summary><strong>更新内容</strong></suumary>
+
+- 设置了session检查用户的登录状态
+- 简单设置了'basic.js'用来改变不同登录状态下的导航栏
+- 开始连接数据判断登录
+</detail>
 
 ## Version 2.4.0
 

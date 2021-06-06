@@ -61,29 +61,26 @@
                         <div class="dropdown-menu">
                             <div class="arrow-up"></div>
                             <ul>
-                                <li>
-                                    <a data-scroll href="">Register<i class="bi bi-pencil-square"></i></a>
+                                <li id="a-register">
+                                    <a href="register.html">Register<i class="bi bi-pencil-square"></i></a>
                                 </li>
-                                <li id="login-btn">
-                                    <a data-scroll href="">Login<i class="bi bi-box-arrow-in-left"></i></a>
+                                <li id="a-logout">
+                                    <a>Logout<i class="bi bi-box-arrow-right"></i></a>
                                 </li>
-                                <li>
-                                    <a data-scroll href="">Logout<i class="bi bi-box-arrow-right"></i></a>
+                                <li id="a-modify">
+                                    <a href="modify.html">Modify Info<i class="bi bi-eraser-fill"></i></a>
                                 </li>
-                                <li>
-                                    <a data-scroll href="">Modify Info<i class="bi bi-eraser-fill"></i></a>
+                                <li id="a-write">
+                                    <a href="edit.html">Write<i class="bi bi-pen-fill"></i></a>
                                 </li>
-                                <li>
-                                    <a>Write<i class="bi bi-pen-fill"></i></a>
+                                <li id="a-index">
+                                    <a href="index.html">Home<i class="bi bi-house-fill"></i></a>
                                 </li>
-                                <li>
-                                    <a data-scroll href="index.html">Home<i class="bi bi-house-fill"></i></a>
+                                <li id="a-space">
+                                    <a href="space.html">Space<i class="bi bi-person-circle"></i></a>
                                 </li>
-                                <li>
-                                    <a data-scroll href="">Commend<i class="bi bi-book-fill"></i></a>
-                                </li>
-                                <li>
-                                    <a data-scroll href="">About<i class="bi bi-person-circle"></i></a>
+                                <li id="a-admin">
+                                    <a href="admin.html">Admin<i class="bi bi-gear-wide"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -101,9 +98,9 @@
         <div class="body-form">
             <form class="form-horizontal">
                 <div class="form-group">
-                    <label for="form-userID" class="col-sm-4 control-label">User ID:</label>
+                    <label for="form-id" class="col-sm-4 control-label">User ID:</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="form-userID" placeholder="Your user name">
+                        <input type="text" class="form-control" id="form-id" placeholder="Your user id">
                     </div>
                 </div>
                 <div class="form-group">
@@ -114,7 +111,8 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-8">
-                        <button type="submit" class="btn btn-info">Login</button>
+                        <span id="helpBlock" class="help-block"></span>
+                        <button type="button" id="form-btn" class="btn btn-info">Login</button>
                     </div>
                 </div>
             </form>
@@ -127,7 +125,7 @@
             <div class="row">
 
                 <div class="col-sm-6 col-xs-12">
-                    <p class="copyright wow animate__animated animate__lightSpeedInRight" data-wow-delay="1.5s">© Copyright 2021. More informations <a href="" title="更多信息">click here</a></p>
+                    <p class="copyright wow animate__animated animate__lightSpeedInRight" data-wow-delay="1.5s">© Copyright 2021. More informations <a href="history.html" title="更多信息">click here</a></p>
                     <!--  /.copyright  -->
                 </div>
 
@@ -171,6 +169,12 @@
     <script type="text/javascript">
         smoothScroll.init();
     </script>
+
+    <!-- # basic.js -->
+    <script type="text/javascript" src="js/basic.js"></script>
+
+    <!-- # login.js -->
+    <script type="text/javascript" src="js/login.js"></script>
 
     <!-- # js -->
     <script type="text/javascript" src=""></script>

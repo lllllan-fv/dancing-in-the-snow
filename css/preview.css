@@ -126,7 +126,8 @@ h2.preview-title {
 
 /* # ******** ipad ********* */
 
-@media screen and (max-width:1400px),
+
+/* @media screen and (max-width:1400px),
 screen and (max-height: 900px) {
     #preview {
         width: 70%;
@@ -138,12 +139,13 @@ screen and (max-height: 900px) {
         height: 80%;
         margin-top: 1em;
     }
-}
+} */
 
 
 /* # ******** phone ********* */
 
-@media screen and (max-width:550px),
+
+/* @media screen and (max-width:550px),
 screen and (max-height: 700px) {
     #preview {
         width: 80%;
@@ -153,4 +155,4 @@ screen and (max-height: 700px) {
         padding: 2em 2em 2em 2em;
         overflow: hidden;
     }
-}
+} */
