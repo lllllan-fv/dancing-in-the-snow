@@ -1,3 +1,5 @@
+$userdata = Array();
+
 function load() {
 
     // ! 登录检查
@@ -9,6 +11,7 @@ function load() {
         data: {},
         success: function(data) {
             console.log(data);
+            $userdata = data;
 
             $(".dropdown-menu ul li").show();
             // ! 检查是否登录
@@ -29,7 +32,7 @@ function load() {
             }
 
             // ! 检查是否有管理员权限
-            if (!data.user_id || !data.identity) {
+            if (!data.user_id || data.identity == "0") {
                 console.log("#a-admin hide");
                 $("#a-admin").hide();
             }

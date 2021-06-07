@@ -3,16 +3,31 @@
 <center>
 
 # Dancing in the snow
-**Version:** 3.1.0
-**update:** 01/06/07 17：25
+**Version:** 3.1.1
+**update:** 01/06/08 00:10
 
 </center>
 
 # 历史版本
 
+## Version 3.1.1
+
+- 2021.6.8 00:10
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 注册页面
+  - 增加对userid数字的判断，以及传参时去除前导零
+- 修改页面
+  - 做了一点点，没完。困了先睡
+</details>
+
+---
+
 ## Version 3.1.0
 
-- 2021。6.7 17：25
+- 2021.6.7 17：25
 
 <details>
   <summary><strong>更新内容</strong></summary>
@@ -20,17 +35,21 @@
 - 可以注册了！
 </details>
 
+---
+
 ## Version 3.0.0
 
 - 2021.6.6 23:35
 
 <details>
-  <summary><strong>更新内容</strong></suumary>
+  <summary><strong>更新内容</strong></summary>
 
 - 设置了session检查用户的登录状态
 - 简单设置了'basic.js'用来改变不同登录状态下的导航栏
 - 开始连接数据判断登录
-</detail>
+</details>
+
+---
 
 ## Version 2.4.0
 
@@ -43,6 +62,7 @@
 - 修改navigation
 </details>
 
+---
 
 ## Version 2.3.0
 
