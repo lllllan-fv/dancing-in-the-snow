@@ -3,12 +3,22 @@
 <center>
 
 # Dancing in the snow
-**Version:** 3.0.0
-**update:** 01/06/06 23:35
+**Version:** 3.1.0
+**update:** 01/06/07 17：25
 
 </center>
 
 # 历史版本
+
+## Version 3.1.0
+
+- 2021。6.7 17：25
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 可以注册了！
+</details>
 
 ## Version 3.0.0
 

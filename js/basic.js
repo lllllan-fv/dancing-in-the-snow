@@ -1,4 +1,4 @@
-$(document).ready(function() {
+function load() {
 
     // ! 登录检查
     $.ajax({
@@ -9,6 +9,8 @@ $(document).ready(function() {
         data: {},
         success: function(data) {
             console.log(data);
+
+            $(".dropdown-menu ul li").show();
             // ! 检查是否登录
             if (data.user_id) {
                 console.log("#a-login hide");
@@ -26,7 +28,6 @@ $(document).ready(function() {
                 $("#a-write").hide();
             }
 
-
             // ! 检查是否有管理员权限
             if (!data.user_id || !data.identity) {
                 console.log("#a-admin hide");
@@ -35,6 +36,26 @@ $(document).ready(function() {
         },
         error: function() {
             alert("basic.js => loginCheck.php error");
+        }
+    });
+
+}
+
+$(document).ready(function() { load(); });
+
+$("#a-logout").click(function() {
+    $.ajax({
+        url: 'php/logout.php',
+        async: false, // 取消异步
+        type: 'POST',
+        dataType: 'json',
+        data: {},
+        success: function(data) {
+            console.log(data);
+            load();
+        },
+        error: function() {
+            alert("basic.js => logout.php error");
         }
     });
 })

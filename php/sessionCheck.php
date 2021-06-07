@@ -1,7 +1,9 @@
 <?php
-    if(session_status() !== PHP_SESSION_ACTIVE){
-        session_start();  
-        $_SESSION["user_id"] = NULL;
-        $_SESSION["identity"] = NULL; 
+    if(session_status() !== 2){
+        session_start(); 
     }
-?>
+
+    function getSession($data) {
+        return isset($_SESSION[$data]) ? $_SESSION[$data] : NULL;
+    }
+?>  

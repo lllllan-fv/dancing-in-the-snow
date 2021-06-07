@@ -1,4 +1,7 @@
 <?php
     require_once("sessionCheck.php");
-    echo json_encode(array("user_id" => $_SESSION["user_id"], "identity" => $_SESSION["identity"]));
+
+    $user_id = getSession("user_id");
+    $identity = getSession("identity");
+    echo json_encode(array("user_id" => $user_id, "identity" => $identity));
 ?>

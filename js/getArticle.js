@@ -1,10 +1,3 @@
-// console.log("receive test");
-
-// let receive = window.opener["filter"];
-// let article_id = receive["article_id"];
-
-// console.log(article_id);
-
 var xmlHttp = null;
 
 function getMD() {
