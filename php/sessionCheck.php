@@ -4,6 +4,6 @@
     }
 
     function getSession($data) {
-        return isset($_SESSION[$data]) ? $_SESSION[$data] : NULL;
+        return isset($_SESSION[$data]) ? $_SESSION[$data] : $_SESSION[$data] = NULL;
     }
 ?>  

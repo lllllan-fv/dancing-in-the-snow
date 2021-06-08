@@ -3,7 +3,7 @@
 
     $avatar = time().$avatar;
 
-    $target = "../img/ava/" . $avatar;
+    $target = "img/ava/" . $avatar;
 
     if(!file_exists($target)) {
         move_uploaded_file($_FILES['avatar']['tmp_name'],$target);   

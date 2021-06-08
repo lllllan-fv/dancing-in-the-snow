@@ -2,10 +2,9 @@ $userdata = Array();
 
 function load() {
 
-    // ! 登录检查
     $.ajax({
         url: 'php/loginCheck.php',
-        async: false, // 取消异步
+        async: false,
         type: 'POST',
         dataType: 'json',
         data: {},
@@ -42,6 +41,20 @@ function load() {
         }
     });
 
+    var strUrl = window.location.href;
+    var arrUrl = strUrl.split("/");
+    var strPage = arrUrl[arrUrl.length - 1];
+    if (strPage.indexOf("?") > -1) {
+        var pageName = strPage.split("?");
+        strPage = pageName[0];
+    }
+    console.log("now", strPage);
+
+    if (!$userdata["user_id"]) {
+        if (strPage == "modify.html" || strPage == "edit.html" || strPage == "space.html") {
+            window.open('inaccessible.html', '_self');
+        }
+    }
 }
 
 $(document).ready(function() { load(); });

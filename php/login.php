@@ -11,10 +11,14 @@
 
     $row = mysqli_fetch_array($result);
 
-    // echo json_encode($row["user_pwd"]);
     if ($row["user_pwd"] == $user_pwd) {
-        $_SESSION["user_id"] = $user_id;
+        $_SESSION["user_id"] = $row["user_id"];
+        $_SESSION["user_name"] = $row["user_name"];
+        $_SESSION["user_pwd"] = $row["user_pwd"];
+        $_SESSION["ava_path"] = $row["ava_path"];
         $_SESSION["identity"] = $row["identity"];
+        $_SESSION["realname"] = $row["realname"];
+        $_SESSION["email"] = $row["email"];
         echo json_encode(array(
             "status"=>"1",
             "msg"=>"登录成功"

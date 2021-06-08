@@ -26,7 +26,12 @@
         $res = mysqli_query($conn, $query);
 
         $_SESSION['user_id'] = $user_id;
+        $_SESSION['user_name'] = $user_name;
+        $_SESSION['user_pwd'] = $user_pwd;
+        $_SESSION["ava_path"] = $ava_path;
         $_SESSION['identity'] = '0';
+        $_SESSION['realname'] = $realname;
+        $_SESSION['email'] = $email;
         echo json_encode(array(
             "status" => "1",
             "msg" => "注册成功"

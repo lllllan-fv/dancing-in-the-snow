@@ -52,10 +52,11 @@
 
         <a role="button" class="btn btn-publish">发布文章</a>
 
-        <img src="img/lllllan.png" class="avator img-circle">
+        <a href="space.html" target="_blank"><img src="img/lllllan.png" class="avatar img-circle"></a>
     </section>
     <!-- ! /navigation -->
 
+    <canvas id="headImg" style="display:none"></canvas>
     <textarea></textarea>
     <div class="mdEditor"></div>
 
@@ -103,16 +104,28 @@
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
-
-        $('button').click(function() {
-            // window.open("article.html", '_self');
-        })
     </script>
 
     <!-- # scroll -->
     <script type="text/javascript">
         smoothScroll.init();
     </script>
+
+    <!-- # 刷星退出警告 -->
+    <script type="text/javascript">
+        window.addEventListener("beforeunload", function(e) {
+            (e || window.event).returnValue = '确定离开此页吗？';
+        });
+    </script>
+
+    <!-- # basic.js -->
+    <script type="text/javascript" src="js/basic.js"></script>
+
+    <!-- # avatar.js -->
+    <script type="text/javascript" src="js/avatar.js"></script>
+
+    <!-- # edit.js -->
+    <script type="text/javascript" src="js/edit.js"></script>
 
     <!-- # js -->
     <script type="text/javascript" src=""></script>

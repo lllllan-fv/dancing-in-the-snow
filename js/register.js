@@ -1,7 +1,5 @@
 function register() {
 
-    console.log("ava", ava_path);
-
     $.ajax({
         url: 'php/register.php',
         async: false, // 取消异步
@@ -27,6 +25,7 @@ function register() {
             alert("register.js => register.php error");
         }
     });
+    $("#form-btn").attr("disabled", false);
 }
 
 $('#form-btn').click(function() {
@@ -53,10 +52,9 @@ $('#form-btn').click(function() {
         $(".help-block").html("两次密码不一致");
         $("#form-btn").attr("disabled", true);
     } else if ($("#form-ava").val() == "" || canUpload) {
-        console.log("DBconnect");
-
         if (canUpload) uploadAvatar();
-        setTimeout(register, 400);
+        $("#form-btn").attr("disabled", true);
+        setTimeout(register, 100);
     }
 })
 
@@ -64,7 +62,6 @@ $('#form-btn').click(function() {
 document.onkeydown = function(e) {
     e = e || window.event;
     if ($("input").is(":focus")) {
-        console.log("focus");
         if (e.keyCode == 13) {
             $('#form-btn').click();
             return false; // ! 防止页面跳转刷新掉
@@ -74,7 +71,6 @@ document.onkeydown = function(e) {
 
 // ! input监听
 $("input").on("input propertychange change", function() {
-    console.log("input change");
     if ($("#form-userid").val() != "" && $("#form-username").val() != "" && $("#form-pwd").val() != "" && $("#form-checkpwd").val() != "" && $("#form-checkbox").is(':checked') == true) {
         $(".help-block").html("");
         $("#form-btn").attr("disabled", false);
@@ -92,3 +88,10 @@ $("input").on("input propertychange change", function() {
         $("#form-checkpwd").parent().removeClass("has-error");
     }
 });
+
+$(document).ready(function() {
+    canUpload = false;
+    ava_path = "";
+    fdata = new FormData();
+    console.log("init", canUpload, ava_path, fdata);
+})

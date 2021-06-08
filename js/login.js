@@ -1,4 +1,32 @@
+function login() {
+    $.ajax({
+        url: 'php/login.php',
+        async: false, // 取消异步
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            user_id: $("#form-id").val(),
+            user_pwd: $("#form-pwd").val()
+        },
+        success: function(data) {
+            console.log(data);
+            if (data.status == 1) {
+                console.log("success");
+                // ! 登录成功返回上一页
+                window.open('index.html', '_self');
+            } else {
+                $(".help-block").html("账号或密码错误！");
+            }
+        },
+        error: function() {
+            alert("login.js => login.php error");
+        }
+    });
+    $("#form-btn").attr("disabled", false);
+}
+
 $('#form-btn').click(function() {
+
     console.log("#form-id.val", $("#form-id").val(), "#form-pwd.val", $("#form-pwd").val());
     // ! 先检查输入是否完整
     if ($("#form-id").val() == "" || $("#form-pwd").val() == "") {
@@ -11,31 +39,10 @@ $('#form-btn').click(function() {
             $("#form-pwd").parent().addClass("has-error");
         }
     } else {
-
         // ! 再到数据库里调取内容
-        $.ajax({
-            url: 'php/login.php',
-            async: false, // 取消异步
-            type: 'POST',
-            dataType: 'json',
-            data: {
-                user_id: $("#form-id").val(),
-                user_pwd: $("#form-pwd").val()
-            },
-            success: function(data) {
-                console.log(data);
-                if (data.status == 1) {
-                    console.log("success");
-                    // ! 登录成功返回上一页
-                    window.location.replace(document.referrer);
-                } else {
-                    $(".help-block").html("账号或密码错误！");
-                }
-            },
-            error: function() {
-                alert("login.js => login.php error");
-            }
-        });
+
+        $("#form-btn").attr("disabled", true);
+        setTimeout(login, 100);
     }
 })
 

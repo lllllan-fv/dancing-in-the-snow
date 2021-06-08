@@ -3,12 +3,28 @@
 <center>
 
 # Dancing in the snow
-**Version:** 3.1.1
-**update:** 01/06/08 00:10
+**Version:** 3.2.0
+**update:** 01/06/08 11:17
 
 </center>
 
 # 历史版本
+
+## Version 3.2.0
+
+- 2021.6.8 11:17
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 修改页面基本完成
+- 设置密码框不能输入空格
+- 登录、注册、修改需要响应时间，设置了按钮点击之后短暂的时间不能重复点击
+- 增加了警告页面，针对在用户页面退出了账号
+- 修改edit页面的ctrl + s保存编辑框内容
+</details>
+
+---
 
 ## Version 3.1.1
 
