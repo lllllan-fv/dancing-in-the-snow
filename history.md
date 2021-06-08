@@ -3,12 +3,28 @@
 <center>
 
 # Dancing in the snow
-**Version:** 3.2.0
-**update:** 01/06/08 11:17
+**Version:** 3.2.1
+**update:** 01/06/09 00:42
 
 </center>
 
 # 历史版本
+
+## Version 3.2.1
+
+- 2021.6.9 00:42
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 设置了非管理员禁用按键
+  - ctrl + u
+  - F12
+  - 鼠标右键
+- 增加了主页的滚动效果
+</details>
+
+----
 
 ## Version 3.2.0
 

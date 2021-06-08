@@ -303,15 +303,33 @@
         }
     </script>
 
+    <!-- ^ 滚动到下方 -->
+    <script type="text/javascript">
+        function scroolDown() {
+            if ($(window).scrollTop() <= $(window).height()) {
+                console.log("ohhhhhhhhh");
+                $('html, body').animate({
+                    scrollTop: $("#preview").offset().top
+                }, 2000);
+            }
+        }
+
+        $(document).ready(function() {
+            console.log("scroll");
+            setTimeout(scroolDown, 2000);
+        })
+    </script>
+
+    <!-- ^ 滚动效果  -->
     <script type="text/javascript">
         smoothScroll.init();
 
         function scroll() {
             // ! 计算位置判断是否为导航栏添加 ‘fiexd-top’ class
             if ($(window).scrollTop() >= $(window).height()) {
-                $('#navigation').addClass('fixed-top');
+                $('#navigation ').addClass('fixed-top');
             } else {
-                $('#navigation').removeClass('fixed-top');
+                $('#navigation ').removeClass('fixed-top');
             }
         }
 
@@ -328,20 +346,6 @@
         $(document).ready(function() {
             document.onscroll = scroll;
             setHeaderHeight();
-        });
-    </script>
-
-    <!-- # js -->
-    <script type="text/javascript">
-        console.log("js test");
-        $("h2.preview-title").click(function() {
-            console.log("h2 click");
-            //要发送的参数
-            let params = {
-                "article_id": 1,
-            };
-            window["filter"] = params;
-            window.open("article.html");
         });
     </script>
 
