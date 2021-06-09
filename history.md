@@ -3,12 +3,28 @@
 <center>
 
 # Dancing in the snow
-**Version:** 3.2.1
-**update:** 01/06/09 00:42
+**Version:** 3.3.0
+**update:** 01/06/10 00:43
 
 </center>
 
 # 历史版本
+
+## Version 3.3.0
+
+- 2021.6.10 00:43
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 写文章
+  - 新文章禁用了”保存文章“的按钮
+  - 发布之后进入文章页面，完成了页面的渲染，右下有该篇文章的编辑按钮
+- 编辑文章
+  - php部分还没写，先睡觉
+</details>
+
+---
 
 ## Version 3.2.1
 

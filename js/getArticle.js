@@ -1,41 +1,50 @@
 var xmlHttp = null;
 
 function getMD() {
-    if (window.ActiveXObject) {
-        // IE6, IE5 浏览器执行代码
-        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-    } else if (window.XMLHttpRequest) {
-        // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-        xmlHttp = new XMLHttpRequest();
-    }
-    //2.如果实例化成功，就调用open（）方法：
-    if (xmlHttp != null) {
-        xmlHttp.open("get", "article/test.md", true);
-        xmlHttp.send();
-        xmlHttp.onreadystatechange = doResult; //设置回调函数                 
-    }
+    console.log($userdata["article_id"]);
 
-    function doResult() {
-        if (xmlHttp.readyState == 4) { //4表示执行完成
-            if (xmlHttp.status == 200) { //200表示执行成功
-                // console.log(xmlHttp.responseText);
-                mdtext = xmlHttp.responseText;
-                var parser = new HyperDown,
-                    html = parser.makeHtml(xmlHttp.responseText);
-                console.log(html);
-
-                // ! 解决markdown渲染字体过小
-                html = "<font size=4>" + html + "</font>";
-
-                $('.page-title').html("the title");
-                $('.page-title').attr("article_id", "1");
-                $('.page-author a').html("lllllan");
-                $('.page-author a').attr("author", "lllllan");
-                $('.page-author p').html("posted @ 2021-06-13 01:56");
-                $('.page-body').html(html);
+    if ($userdata["article_id"]) {
+        $.ajax({
+            url: 'php/getArticle.php',
+            async: false, // 取消异步
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                article_id: $userdata["article_id"],
+            },
+            success: function(data) {
+                console.log(data);
+                getHtml(data);
+            },
+            error: function() {
+                alert("getArticle.js => getArticle.php error");
             }
-        }
+        });
+    } else {
+        $('.page-title').html("无内容");
+        $('.page-body').html("<h1>未选择任何文章内容</h1>");
     }
 }
 
-getMD();
+function getHtml(data) {
+    mdtext = data.article_text;
+    var parser = new HyperDown,
+        html = parser.makeHtml(mdtext);
+    console.log(html);
+
+    // ! 解决markdown渲染字体过小
+    html = "<font size=4>" + html + "</font>";
+
+    $('.page-title').html(data.article_title);
+    $('.page-author a').html(data.author_name);
+    $info = "<div class='page-info'><div class='posted'>posted @ " + data.update_time + "</div></div>";
+    if (data.author_id == $userdata["user_id"]) {
+        $info = "<div class='page-info'><div class='posted'>posted @ " + data.update_time + "</div><a href='edit.html' target='_self' class='edit'>编辑</a></div>";
+    }
+    $('.page-body').html(html + $info);
+}
+
+$(document).ready(function() {
+    console.log("getArticle", $userdata);
+    getMD();
+})

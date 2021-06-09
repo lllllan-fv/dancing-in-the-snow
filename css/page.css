@@ -14,6 +14,25 @@
     font-size: 6em;
 }
 
+.page-author {
+    font-family: "Papyrus", Fantasy;
+    color: #c44569;
+    text-align: center;
+    font-size: 2em;
+}
+
+.page-author a {
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bolder;
+    color: #a5b1c2;
+}
+
+.page-author a:hover {
+    font-weight: bolder;
+    color: #fa8231;
+}
+
 .page-body {
     background-color: #ffffff;
     padding: 4em 4em 4em 4em;
@@ -25,12 +44,34 @@
     overflow: hidden;
 }
 
+.page-body .edit {
+    text-align: right;
+}
+
 .page-body a {
     color: #0984e3;
 }
 
 .page-body a:hover {
     color: #b2bec3;
+}
+
+.page-info {
+    margin-top: 2em;
+    margin-bottom: -4em;
+    border-top: 1px solid #dfe6e9;
+    width: 100%;
+    padding-top: 2px;
+}
+
+.page-info .posted {
+    position: relative;
+    float: left;
+}
+
+.page-info .edit {
+    position: relative;
+    float: right;
 }
 
 .body-70 {

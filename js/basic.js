@@ -41,6 +41,7 @@ function load() {
         }
     });
 
+    // ! 查看当前文件名
     var strUrl = window.location.href;
     var arrUrl = strUrl.split("/");
     var strPage = arrUrl[arrUrl.length - 1];
@@ -78,6 +79,16 @@ $("#a-logout").click(function() {
             alert("basic.js => logout.php error");
         }
     });
+})
+
+$("#a-write a").click(function() {
+    console.log("write click");
+    let params = {
+        "article_id": "new",
+    };
+    window["filter"] = params;
+    window.open("edit.html");
+
 })
 
 // ! 屏蔽右键菜单
