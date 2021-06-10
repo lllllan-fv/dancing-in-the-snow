@@ -1,7 +1,7 @@
 $flag = false;
 
-// ?  未完成
-function save() {
+function save(msg) {
+    console.log("title ", $("#title").val());
     $.ajax({
         url: 'php/edit.php',
         async: false, // 取消异步
@@ -11,12 +11,33 @@ function save() {
             article_id: $userdata["article_id"],
             article_title: $("#title").val(),
             article_text: simplemde.value(),
-            article_public: $("[name='switch']").is(":checked"),
+            article_public: msg == "save" ? "" : ($("[name='switch']").is(":checked") ? 1 : 0),
+            article_state: "",
+            article_path: $path,
         },
         success: function(data) {
             console.log(data);
             $flag = true;
-            // window.open('article.html', '_self');
+            if (msg == "publish") {
+                $.ajax({
+                    url: 'php/unWrite.php',
+                    async: false, // 取消异步
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        article_id: $userdata["article_id"],
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        window.open('article.html', '_self');
+                    },
+                    error: function() {
+                        alert("edit.js => unWrite.php error");
+                    }
+                });
+            } else {
+
+            }
         },
         error: function() {
             alert("edit.js => edit.php error");
@@ -27,7 +48,7 @@ function save() {
 function publish() {
     console.log($("[name='switch']").is(":checked"));
 
-    if ($article_id == "new") {
+    if (!$userdata["article_id"]) {
         $.ajax({
             url: 'php/publish.php',
             async: false, // 取消异步
@@ -50,7 +71,7 @@ function publish() {
             }
         });
     } else {
-        save();
+        save("publish");
     }
 
     $(".modal button").attr("disabled", false);
@@ -58,6 +79,7 @@ function publish() {
 
 $(".btn-save").click(function() {
     console.log("save click");
+    save("save");
 })
 
 $(".btn-publish").click(function() {
@@ -90,12 +112,11 @@ document.onkeydown = function(e) {
 }
 
 $(document).ready(function() {
-    let receive = window.opener["filter"];
-    $article_id = receive["article_id"];
-    console.log($article_id, $userdata["article_id"]);
+    console.log("$flag " + $flag);
+    console.log("$userdata['article_id'] " + $userdata["article_id"]);
 
-    if ($article_id == "new") {
-        $(".btn-save").attr("disabled", true);
+    if (!$userdata["article_id"]) {
+        $(".btn-save").hide();
     } else {
         $.ajax({
             url: 'php/getArticle.php',
@@ -110,7 +131,7 @@ $(document).ready(function() {
                 init(data);
             },
             error: function() {
-                alert("getArticle.js => getArticle.php error");
+                alert("edit.js => edit.php error");
             }
         });
     }
@@ -119,6 +140,8 @@ $(document).ready(function() {
 function init(data) {
     $("#title").val(data["article_title"]);
     $("textarea").val(data["article_text"]);
+    $("[name='switch']").prop("checked", "ture");
+    $path = data["article_path"];
     console.log(simplemde.value());
 }
 

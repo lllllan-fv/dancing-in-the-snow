@@ -3,12 +3,28 @@
 <center>
 
 # Dancing in the snow
-**Version:** 3.3.0
-**update:** 01/06/10 00:43
+**Version:** 3.3.1
+**update:** 01/06/11 00:06
 
 </center>
 
 # 历史版本
+
+## Version 3.3.1
+
+- 2021.6.11 00:06
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 现在完成了文章的创建、浏览和编辑
+- 但是遇到一个新的问题
+  - 由于当前访问的文章id，保存在session中
+  - 所以如果打开多篇文章，则会改变session中对文章id的记录
+  - 如果对页面进行刷新，则会呈现到最新一篇文章的内容
+</details>
+
+---
 
 ## Version 3.3.0
 

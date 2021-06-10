@@ -1,4 +1,5 @@
 $userdata = Array();
+$data = sessionStorage;
 
 function load() {
 
@@ -9,7 +10,7 @@ function load() {
         dataType: 'json',
         data: {},
         success: function(data) {
-            console.log(data);
+            console.log("$userdata", data);
             $userdata = data;
 
             $(".dropdown-menu ul li").show();
@@ -82,13 +83,20 @@ $("#a-logout").click(function() {
 })
 
 $("#a-write a").click(function() {
-    console.log("write click");
-    let params = {
-        "article_id": "new",
-    };
-    window["filter"] = params;
-    window.open("edit.html");
-
+    $.ajax({
+        url: 'php/write.php',
+        async: false, // 取消异步
+        type: 'POST',
+        dataType: 'json',
+        data: {},
+        success: function(data) {
+            console.log(data);
+            window.open("edit.html");
+        },
+        error: function() {
+            alert("basic.js => write.php error");
+        }
+    });
 })
 
 // ! 屏蔽右键菜单

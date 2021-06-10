@@ -6,19 +6,19 @@
     $article_title = $_POST["article_title"];
     $article_text = $_POST["article_text"];
     $article_public = $_POST["article_public"];
+    $article_state = $_POST["article_state"];
+    $article_path = $_POST["article_path"];
     
-    $query = "select * from article_management where article_id='" . $article_id . "'";
-    $result = $conn->query($query);
-    $row = mysqli_fetch_array($result);
-    
-    $article_path = $row["article_path"]
+    $modifyState = $article_state == "" ? "" : ", article_state='" . $article_state . "'";
+    $modifyPublic = $article_public == "" ? "" : ", article_public='" . $article_public . "'";
+
+    $query = "update article_management set article_title='" . $article_title . "'" . $modifyPublic . $modifyState . ", update_time=now() where article_id='" . $article_id . "'";
+
+    $conn->query($query);
 
     $file = fopen("../" . $article_path, "w");
     fwrite($file, $article_text);
     fclose($file);
-
-    $query = "insert into article_management values (0, '$user_id', '$user_name', '$article_title', '$article_path', '$article_public', '1', now(), now())";
-    $res = mysqli_query($conn, $query);
 
     echo json_encode(array(
         "status" => "1",

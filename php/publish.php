@@ -14,7 +14,7 @@
     fwrite($file, $article_text);
     fclose($file);
 
-    $query = "insert into article_management values (0, '$user_id', '$user_name', '$article_title', '$article_path', '$article_public', '1', now(), now())";
+    $query = "insert into article_management values (0, '$user_id', '$article_title', '$article_path', '$article_public', '1', now(), now())";
     $res = mysqli_query($conn, $query);
 
     $query = "select * from article_management where article_path='" . $article_path . "'";

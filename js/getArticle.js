@@ -13,7 +13,7 @@ function getMD() {
                 article_id: $userdata["article_id"],
             },
             success: function(data) {
-                console.log(data);
+                console.log("articeldata", data);
                 getHtml(data);
             },
             error: function() {
@@ -37,14 +37,33 @@ function getHtml(data) {
 
     $('.page-title').html(data.article_title);
     $('.page-author a').html(data.author_name);
-    $info = "<div class='page-info'><div class='posted'>posted @ " + data.update_time + "</div></div>";
-    if (data.author_id == $userdata["user_id"]) {
-        $info = "<div class='page-info'><div class='posted'>posted @ " + data.update_time + "</div><a href='edit.html' target='_self' class='edit'>编辑</a></div>";
+    $(".posted").html("posted @ " + data.update_time);
+    if (data.author_id != $userdata["user_id"]) {
+        $(".edit").hide();
     }
-    $('.page-body').html(html + $info);
+    $('.body-text').html(html);
 }
 
+$("#edit").click(function() {
+    console.log("click");
+    $.ajax({
+        url: 'php/unWrite.php',
+        async: false, // 取消异步
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            article_id: $userdata["article_id"],
+        },
+        success: function(data) {
+            console.log(data);
+            window.open("edit.html", "_self");
+        },
+        error: function() {
+            alert("getArticle.js => unWrite.php error");
+        }
+    });
+})
+
 $(document).ready(function() {
-    console.log("getArticle", $userdata);
     getMD();
 })
