@@ -6,6 +6,10 @@
     width: 60%;
 }
 
+.preview-body {
+    width: 100%;
+}
+
 
 /* ! ********** img:hover ********* */
 
@@ -96,7 +100,7 @@
 
 .preview-col-text {
     background-color: #ffffff;
-    padding: 4em 4em 4em 4em;
+    padding: 1em 1em 1em 1em;
     overflow: hidden;
 }
 
