@@ -65,8 +65,8 @@ function InitTable(pageIndex) {
         success: function (data) {
             console.log("length ", data.length);
             console.log("articles ", data);
-            var idx = 0;
             var str = "";
+            var idx = 0;
             $.each(data, function () {
                 $.ajax({
                     type: "POST",
@@ -76,62 +76,26 @@ function InitTable(pageIndex) {
                         article_id: this["article_id"]
                     },
                     success: function (article) {
-                        console.log("article ", article);
-                        ++idx;
+                        var animatein = ((++idx) % 2 == 1) ? "animate__lightSpeedInLeft" : "animate__lightSpeedInRight";
+                        console.log(article["create_time"]);
                         var html = getHtml(article["article_text"].substring(0, Math.min(150, article["article_text"].length)));
-                        if (idx & 1) {
-                            str += "<div class='preview-row row wow animate__animated animate__fadeInLeft'>\
-                            <div class='preview-col preview-img col-sm-4 col-xs-12 wow animate__animated animate__lightSpeedInLeft' data-wow-delay='0.5s'>\
-                                <img src='img/OIP.jpg' class='img-rounded img-responsive center-block'>\
-                                <a role='button' class='a-space' author='";
-                            str += article["author_id"];
-                            str += "'><div class='preview-info'><h3>Author: <strong>";
-                            str += article["author_name"];
-                            str += "</strong></h3><p>view more</p></div></a></div>\
-                            <div class='preview-col preview-col-text col-sm-8 col-xs-12'>\
-                                <div class='preview-text'><h2 class='preview-title'><a";
-                            str += " article='" + article["article_id"] + "'> ";
-                            str += article["article_title"] + "</a></h2>";
-                            str += html + "...";
-                            str += "</div></div></div>";
-                        } else {
-                            str += "<div class='preview-row row wow animate__animated animate__fadeInRight'>\
-                            <div class='preview-col preview-col-text col-sm-8 col-xs-12'>\
-                                <div class='preview-text'><h2 class='preview-title'><a";
-                            str += " article='" + article["article_id"] + "'>";
-                            str += article["article_title"] + "</a></h2>";
-                            str += html + "...";
-                            str += "</div></div>\
-                            <div class='preview-col preview-img col-sm-4 col-xs-12 wow animate__animated animate__lightSpeedInRight' data-wow-delay='0.5s'>\
-                                <img src='img/OIP.jpg' class='preview-reverse img-rounded img-responsive center-block'><a class='a-space' author='";
-                            str += article["author_id"];
-                            str += "'> <div class='preview-info'><h3>Author: <strong>"
-                            str += article["author_name"];
-                            str += "</strong></h3><p>view more</p></div></a></div></div>";
-                        }
-                        $("#preview .preview-body").html(str);
-                        $(".a-space").click(function () {
-                            console.log("a-space click", $(this).attr("author"));
-                            $.ajax({
-                                url: 'php/space.php',
-                                async: false, // 取消异步
-                                type: 'POST',
-                                dataType: 'json',
-                                data: {
-                                    author_id: $(this).attr("author")
-                                },
-                                success: function (data) {
-                                    console.log(data);
-                                    window.open("space.html", "_blank");
-                                },
-                                error: function () {
-                                    alert("basic.js => space.php error");
-                                }
-                            });
-                        })
+                        str += "<div class='page-article width-100 wow animate__animated ";
+                        str += animatein;
+                        str += "'><div class='article-title'>";
+                        str += article["article_title"];
+                        str += "</div><div class='article-text'>";
+                        str += html;
+                        str += "</div><div class='article-details'>\
+                            <div class='details-time'>\
+                                <i class='bi bi-calendar-check'></i>";
+                        str += article["update_time"];
+                        str += "</div><a class='details-more' article='";
+                        str += article["article_id"];
+                        str += "'> 阅读全文 <i class='bi bi-chevron-double-right'></i></a></div></div> ";
 
-                        $("h2.preview-title a").click(function () {
-                            console.log("title click", $(this).attr("article"));
+                        $("#show").html(str);
+                        $("a.details-more").click(function () {
+                            console.log($(this).attr("article"));
                             $.ajax({
                                 url: 'php/unWrite.php',
                                 async: false, // 取消异步
@@ -161,7 +125,6 @@ function InitTable(pageIndex) {
         }
     });
 }
-
 
 function getHtml(data) {
     mdtext = data;

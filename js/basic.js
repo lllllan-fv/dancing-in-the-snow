@@ -9,7 +9,7 @@ function load() {
         type: 'POST',
         dataType: 'json',
         data: {},
-        success: function(data) {
+        success: function (data) {
             console.log("$userdata", data);
             $userdata = data;
 
@@ -37,7 +37,7 @@ function load() {
                 $("#a-admin").hide();
             }
         },
-        error: function() {
+        error: function () {
             alert("basic.js => loginCheck.php error");
         }
     });
@@ -53,7 +53,7 @@ function load() {
     console.log("now", strPage);
 
     if (!$userdata["user_id"]) {
-        if (strPage == "modify.html" || strPage == "edit.html" || strPage == "space.html") {
+        if (strPage == "modify.html" || strPage == "edit.html") {
             window.open('inaccessible.html', '_self');
         }
     } else {
@@ -63,44 +63,64 @@ function load() {
     }
 }
 
-$(document).ready(function() { load(); });
+$(document).ready(function () { load(); });
 
-$("#a-logout").click(function() {
+$("#a-logout").click(function () {
     $.ajax({
         url: 'php/logout.php',
         async: false, // 取消异步
         type: 'POST',
         dataType: 'json',
         data: {},
-        success: function(data) {
+        success: function (data) {
             console.log(data);
             load();
         },
-        error: function() {
+        error: function () {
             alert("basic.js => logout.php error");
         }
     });
 })
 
-$("#a-write a").click(function() {
+$("#a-write a").click(function () {
     $.ajax({
         url: 'php/write.php',
         async: false, // 取消异步
         type: 'POST',
         dataType: 'json',
         data: {},
-        success: function(data) {
+        success: function (data) {
             console.log(data);
             window.open("edit.html");
         },
-        error: function() {
+        error: function () {
             alert("basic.js => write.php error");
         }
     });
 })
 
+$("#a-space").click(function () {
+    console.log("space click");
+    $.ajax({
+        url: 'php/space.php',
+        async: false, // 取消异步
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            author_id: $userdata["user_id"]
+        },
+        success: function (data) {
+            console.log(data);
+            window.open("space.html", "_blank");
+        },
+        error: function () {
+            alert("basic.js => space.php error");
+        }
+    });
+})
+
 // ! 屏蔽右键菜单
-document.oncontextmenu = function(event) {
+document.oncontextmenu = function (event) {
     if ($userdata["identity"] != '1') {
         if (window.event) {
             event = window.event;
@@ -118,7 +138,7 @@ document.oncontextmenu = function(event) {
 }
 
 // ! 禁用 ctrl + u
-document.onkeydown = function(e) {
+document.onkeydown = function (e) {
     if ($userdata["identity"] != '1') {
         e = e || window.event;
         var currKey = 0,
@@ -132,7 +152,7 @@ document.onkeydown = function(e) {
 }
 
 // ! 禁用F12
-window.onkeydown = window.onkeyup = window.onkeypress = function(event) {
+window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
     if ($userdata["identity"] != '1') {
         // 判断是否按下F12，F12键码为123
         if (event.keyCode == 123) {

@@ -9,6 +9,9 @@
     $realname = getSession("realname");
     $email = getSession("email");
     $article_id = getSession("article_id");
+    $author_id = getSession("author_id");
+    $author_name = getSession("author_name");
+    $author_ava = getSession("author_ava");
     
     echo json_encode(array(
         "user_id" => $user_id,
@@ -19,5 +22,8 @@
         "realname" => $realname,
         "email" => $email,
         "article_id" => $article_id,
+        "author_id" => $author_id,
+        "author_name" => $author_name,
+        "author_ava" => $author_ava
     ));
 ?>

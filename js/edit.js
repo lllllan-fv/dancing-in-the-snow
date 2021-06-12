@@ -1,4 +1,4 @@
-$flag = false;
+$flag = true;
 
 function save(msg) {
     console.log("title ", $("#title").val());
@@ -15,7 +15,7 @@ function save(msg) {
             article_state: "",
             article_path: $path,
         },
-        success: function(data) {
+        success: function (data) {
             console.log(data);
             $flag = true;
             if (msg == "publish") {
@@ -27,11 +27,11 @@ function save(msg) {
                     data: {
                         article_id: $userdata["article_id"],
                     },
-                    success: function(data) {
+                    success: function (data) {
                         console.log(data);
                         window.open('article.html', '_self');
                     },
-                    error: function() {
+                    error: function () {
                         alert("edit.js => unWrite.php error");
                     }
                 });
@@ -39,7 +39,7 @@ function save(msg) {
 
             }
         },
-        error: function() {
+        error: function () {
             alert("edit.js => edit.php error");
         }
     });
@@ -61,12 +61,12 @@ function publish() {
                 user_id: $userdata["user_id"],
                 user_name: $userdata["user_name"]
             },
-            success: function(data) {
+            success: function (data) {
                 console.log(data);
                 $flag = true;
                 window.open('article.html', '_self');
             },
-            error: function() {
+            error: function () {
                 alert("edit.js => publish.php error");
             }
         });
@@ -77,12 +77,12 @@ function publish() {
     $(".modal button").attr("disabled", false);
 }
 
-$(".btn-save").click(function() {
+$(".btn-save").click(function () {
     console.log("save click");
     save("save");
 })
 
-$(".btn-publish").click(function() {
+$(".btn-publish").click(function () {
     if ($("#title").val() == "") {
         $('#warningModal').modal('show');
     } else {
@@ -90,14 +90,14 @@ $(".btn-publish").click(function() {
     }
 })
 
-$("#publish").click(function() {
+$("#publish").click(function () {
     console.log("click");
 
     $(".modal button").attr("disabled", true);
     setTimeout(publish, 400);
 })
 
-document.onkeydown = function(e) {
+document.onkeydown = function (e) {
     e = e || window.event;
     var currKey = 0,
         e = e || event || window.event;
@@ -111,7 +111,7 @@ document.onkeydown = function(e) {
     }
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     console.log("$flag " + $flag);
     console.log("$userdata['article_id'] " + $userdata["article_id"]);
 
@@ -126,11 +126,11 @@ $(document).ready(function() {
             data: {
                 article_id: $userdata["article_id"],
             },
-            success: function(data) {
+            success: function (data) {
                 console.log(data);
                 init(data);
             },
-            error: function() {
+            error: function () {
                 alert("edit.js => edit.php error");
             }
         });
@@ -145,10 +145,10 @@ function init(data) {
     console.log(simplemde.value());
 }
 
-$("#title").on("input propertychange change", function() { $flag = false; })
-simplemde.codemirror.on("change", function() { $flag = false; })
+$("#title").on("input propertychange change", function () { $flag = false; })
+simplemde.codemirror.on("change", function () { $flag = false; })
 
-window.addEventListener("beforeunload", function(e) {
+window.addEventListener("beforeunload", function (e) {
     if (!$flag) {
         (e || window.event).returnValue = '确定离开此页吗？';
     }

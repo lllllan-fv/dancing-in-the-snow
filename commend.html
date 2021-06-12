@@ -11,14 +11,14 @@
     <!-- ! 主页logo -->
     <link rel="icon" href="img/favicon.png" type="image/x-icon" />
 
-    <!-- ! 设置所有链接打开新页面 -->
-    <base target="_blank" />
-
     <!-- ^ Bootstrap 3.4.1 -->
     <link href="css/bootstrap-3.4.1.min.css" rel="stylesheet">
 
     <!-- ^ animate 4.1.1 -->
     <link href="css/animate.css" rel="stylesheet">
+
+    <!-- ^ pagination.css -->
+    <link rel="stylesheet" href="css/pagination.css">
 
     <!-- ^ wow 1.1.2 -->
     <script src="js/wow.min.js"></script>
@@ -32,7 +32,7 @@
     <!-- ^ markdwon -->
     <link href="css/simplemde-1.11.2.min.css" rel="stylesheet">
 
-    <!-- # home -->
+    <!-- # home-loading -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- # css -->
@@ -46,15 +46,12 @@
 <body id="top">
 
     <div class="imgsection page-head">
-        <div class="page-title animate__animated"></div>
-        <div class="page-author">
-            <a></a>
-            <p></p>
-        </div>
+        <div class="page-title animate__animated">commend</div>
+        <div class="page-info"></div>
     </div>
 
     <!-- ! navigation -->
-    <section id="navigation" class="fixed-top">
+    <section id="navigation">
         <div class="container">
             <div class="row">
                 <div class="col-xs-2 text-left">
@@ -62,7 +59,8 @@
                 </div>
                 <div class="col-xs-10 text-right">
                     <div>
-                        <a href="#" data-placement="bottom" title="Menu" class="nav-menu" data-toggle="dropdown"><i class="col-red bi bi-list" style="color: #45aaf2;"></i></a>
+                        <a href="#" data-placement="bottom" title="Menu" class="nav-menu" data-toggle="dropdown"><i
+                                class="col-red bi bi-list" style="color: #45aaf2;"></i></a>
                         <div class="dropdown-menu">
                             <div class="arrow-up"></div>
                             <ul>
@@ -85,10 +83,10 @@
                                     <a href="index.html">Home<i class="bi bi-house-fill"></i></a>
                                 </li>
                                 <li id="a-space">
-                                    <a href="space.html">Space<i class="bi bi-person-circle"></i></a>
+                                    <a>Space<i class="bi bi-person-circle"></i></a>
                                 </li>
                                 <li id="a-admin">
-                                    <a href="admin.html">Admin<i class="bi bi-gear-wide"></i></a>
+                                    <a href="admin.html" target="_blank">Admin<i class="bi bi-gear-wide"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -99,16 +97,23 @@
     </section>
     <!-- ! /navigation -->
 
-    <!-- <div class="bg"></div> -->
 
-    <div class="page-body">
-        <div class="body-text"></div>
-        <div class="body-info">
-            <div class="posted"></div>
-            <a role="button" class="edit" id="edit">编辑</a>
+    <div class="page-body body-70">
+        <div id="show">
+            <div class="page-article width-100">
+                <div class="article-title">文章标题</div>
+                <div class="article-text">文章摘要</div>
+                <div class="article-details">
+                    <div class="details-time">
+                        <i class="bi bi-calendar-check"></i>2021/06/01
+                    </div>
+                    <a class="details-more">阅读全文<i class="bi bi-chevron-double-right"></i></a>
+                </div>
+            </div>
         </div>
-    </div>
 
+        <div id="pager" class="black2"></div>
+    </div>
 
     <!-- ! footer copy -->
     <footer>
@@ -116,12 +121,14 @@
             <div class="row">
 
                 <div class="col-sm-6 col-xs-12">
-                    <p class="copyright wow animate__animated animate__lightSpeedInRight" data-wow-delay="1.5s">© Copyright 2021. More informations <a href="history.html" title="更多信息">click here</a></p>
+                    <p class="copyright wow animate__animated animate__lightSpeedInRight" data-wow-delay="1.5s">©
+                        Copyright 2021. More informations <a href="history.html" title="更多信息">click here</a></p>
                     <!--  /.copyright  -->
                 </div>
 
                 <div class="col-sm-6 col-xs-12">
-                    <p class="designed wow animate__animated animate__lightSpeedInLeft" data-wow-delay="1.5s">Designed and Developed by lllllan</p>
+                    <p class="designed wow animate__animated animate__lightSpeedInLeft" data-wow-delay="1.5s">Designed
+                        and Developed by lllllan</p>
                     <!--  /.designed  -->
                 </div>
 
@@ -140,13 +147,17 @@
 
     <!-- ^ smooth-scrool.js -->
     <script src="js/smooth-scroll.js"></script>
-    <script type="text/javascript">
-        smoothScroll.init();
+
+    <!-- ^ pagination.js -->
+    <script type="text/javascript" src="js/jquery.pagination.js"></script>
+
+    <!-- ^ markdown to html -->
+    <script src="js/parser.js">
     </script>
 
     <!-- ^ 刷新回到页面顶部 -->
     <script type="text/javascript">
-        addEventListener("load", function() {
+        addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
 
@@ -155,11 +166,10 @@
         }
     </script>
 
-    <!-- ^ markdown to html -->
-    <script src="js/parser.js"></script>
-
-    <!-- ^ markdwon -->
-    <script src="js/simplemde-1.11.2.min.js"></script>
+    <!-- # scroll -->
+    <script type="text/javascript">
+        smoothScroll.init();
+    </script>
 
     <!-- # page.js -->
     <script type="text/javascript" src="js/page.js"></script>
@@ -167,8 +177,8 @@
     <!-- # basic.js -->
     <script type="text/javascript" src="js/basic.js"></script>
 
-    <!-- # getArticle.js -->
-    <script type="text/javascript" src="js/getArticle.js"></script>
+    <!-- # commend.js -->
+    <script type="text/javascript" src="js/commend.js"></script>
 
     <!-- # js -->
     <script type="text/javascript" src=""></script>

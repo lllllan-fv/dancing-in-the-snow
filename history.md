@@ -3,12 +3,24 @@
 <center>
 
 # Dancing in the snow
-**Version:** 3.3.2
-**update:** 01/06/11 16:06
+**Version:** 3.3.3
+**update:** 01/06/13 01:44
 
 </center>
 
 # 历史版本
+
+## Version 3.3.3
+
+- 2021.6.13 01:44
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 除开后台管理系统，大概是竣工了，待测试
+</details>
+
+---
 
 ## Version 3.3.2
 
