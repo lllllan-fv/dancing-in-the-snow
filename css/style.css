@@ -31,7 +31,6 @@ a:hover {
     background-position: center 0;
 }
 
-
 /* ! ************************** home-loading ******************************* */
 
 .home-loading {
@@ -43,7 +42,6 @@ a:hover {
     z-index: 9999;
     background: url(../img/loading.gif) center no-repeat #fff;
 }
-
 
 /* ! *************************** header *********************************** */
 
@@ -90,7 +88,6 @@ a:hover {
     letter-spacing: 7px;
     word-spacing: 6px;
 }
-
 
 /* ! ***************************** navigation ****************************** */
 
@@ -187,6 +184,15 @@ a:hover {
     margin-right: 23px;
 }
 
+/* ! ******************************************************************* */
+
+.showimg {
+    background: url(../img/waitao.jpg) no-repeat;
+    height: 40vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
 
 /* ! **************************** img-section ************************** */
 
@@ -207,7 +213,6 @@ a:hover {
 .img3 {
     background-image: url(../img/bg.jpg);
 }
-
 
 /* ! **************************** inforamtion ************************** */
 
@@ -231,7 +236,6 @@ a:hover {
 .info-bottom-mid {
     background-color: #45aaf2;
 }
-
 
 /* ! **************************** footer ******************************* */
 

@@ -111,12 +111,19 @@ document.onkeydown = function (e) {
     }
 }
 
+var simplemde;
 $(document).ready(function () {
     console.log("$flag " + $flag);
     console.log("$userdata['article_id'] " + $userdata["article_id"]);
 
     if (!$userdata["article_id"]) {
         $(".btn-save").hide();
+        simplemde = new SimpleMDE({
+            autofocus: true,
+            element: $("#mdEditor")[0],
+            initialValue: "",
+        });
+        simplemde.codemirror.on("change", function () { $flag = false; })
     } else {
         $.ajax({
             url: 'php/getArticle.php',
@@ -131,7 +138,7 @@ $(document).ready(function () {
                 $("#title").val(data["article_title"]);
                 $("[name='switch']").prop("checked", "ture");
                 $path = data["article_path"];
-                var simplemde = new SimpleMDE({
+                simplemde = new SimpleMDE({
                     autofocus: true,
                     element: $("#mdEditor")[0],
                     initialValue: data["article_text"],

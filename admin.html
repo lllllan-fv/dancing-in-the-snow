@@ -20,6 +20,9 @@
     <!-- ^ animate 4.1.1 -->
     <link href="css/animate.css" rel="stylesheet">
 
+    <!-- ^ pagination.css -->
+    <link rel="stylesheet" href="css/pagination.css">
+
     <!-- ^ wow 1.1.2 -->
     <script src="js/wow.min.js"></script>
     <script>
@@ -90,32 +93,9 @@
     <!-- ! /navigation -->
 
     <div class="page-body">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>文章标题</th>
-                    <th>作者</th>
-                    <th>发布时间</th>
-                    <th>上次更新</th>
-                    <th>正常/禁用</th>
-                    <th>存活/删除</th>
-                    <th>公开/私密</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="success">
-                    <th scope="row">1</th>
-                    <td>lllllan的第一篇博客</td>
-                    <td>lllllan</td>
-                    <td>2021/06/01</td>
-                    <td>2021/06/05</td>
-                    <td><input type="checkbox" name="switch" checked></td>
-                    <td><input type="checkbox" name="switch" checked></td>
-                    <td><input type="checkbox" name="switch" checked></td>
-                </tr>
-            </tbody>
+        <table class="table table-hover table-striped">
         </table>
+        <div id="pager" class="scott"></div>
     </div>
 
     <!-- ! footer copy -->
@@ -151,6 +131,9 @@
     <!-- ^ bootstrap switch 3.3.4 -->
     <script src="js/bootstrap-switch-3.3.4.js"></script>
 
+    <!-- ^ pagination.js -->
+    <script type="text/javascript" src="js/jquery.pagination.js"></script>
+
     <!-- ^ smooth-scrool.js -->
     <script src="js/smooth-scroll.js"></script>
 
@@ -165,24 +148,6 @@
         }
     </script>
 
-    <script>
-        $("[name='switch']").bootstrapSwitch({
-            onText: "启用", // 设置ON文本
-            offText: "禁用", // 设置OFF文本
-            onColor: "success", // 设置ON文本颜色(info/success/warning/danger/primary)
-            offColor: "warning", // 设置OFF文本颜色 (info/success/warning/danger/primary)
-            size: "normal", // 设置控件大小,从小到大  (mini/small/normal/large)
-            // 当开关状态改变时触发
-            onSwitchChange: function (event, state) {
-                if (state == true) {
-                    console.log("true");
-                } else {
-                    console.log("false");
-                }
-            }
-        });
-    </script>
-
     <!-- # scroll -->
     <script type="text/javascript">
         smoothScroll.init();
@@ -190,6 +155,9 @@
 
     <!-- # basic.js -->
     <script type="text/javascript" src="js/basic.js"></script>
+
+    <!-- # admin.js -->
+    <script type="text/javascript" src="js/admin.js"></script>
 
     <!-- # js -->
     <script type="text/javascript" src=""></script>

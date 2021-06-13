@@ -1,7 +1,7 @@
 //页面索引初始值  
 var pageIndex = 1;
 //每页显示条数初始化，修改显示条数，修改这里即可    
-var pageSize = 8;
+var pageSize = 5;
 //总的记录数，随便赋个初值好了，后面会重新赋值的 
 var pageCount = 30;
 

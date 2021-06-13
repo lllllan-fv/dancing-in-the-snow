@@ -3,6 +3,7 @@
     require_once("DBconnect.php");
 
     $_SESSION["article_id"] = NULL;
+    $_SESSION["author_id"] = NULL;
 
     echo json_encode($_SESSION["article_id"]);
 ?>

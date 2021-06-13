@@ -10,7 +10,6 @@
     width: 100%;
 }
 
-
 /* ! ********** img:hover ********* */
 
 .preview-img {
@@ -66,8 +65,7 @@
     transform: scale(0.9);
 }
 
-.preview-img:hover .preview-info,
-.preview-img:hover p {
+.preview-img:hover .preview-info, .preview-img:hover p {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
@@ -80,7 +78,6 @@
 .preview-img:hover img {
     opacity: 0.4;
 }
-
 
 /* ! ********** preview-row ********* */
 
@@ -127,9 +124,7 @@ h2.preview-title {
     transform: rotateY(180deg);
 }
 
-
 /* # ******** ipad ********* */
-
 
 /* @media screen and (max-width:1400px),
 screen and (max-height: 900px) {
@@ -145,9 +140,7 @@ screen and (max-height: 900px) {
     }
 } */
 
-
 /* # ******** phone ********* */
-
 
 /* @media screen and (max-width:550px),
 screen and (max-height: 700px) {
