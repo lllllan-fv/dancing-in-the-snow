@@ -8,7 +8,7 @@ var pageCount = 30;
 $(document).ready(function () {
     $(".page-title").html($userdata["author_name"] + "的空间");
     $("h2.user-name").html($userdata["author_name"]);
-    $("p.user-info").html($userdata["author_name"] == "lllllan" ? "一个在役ACMer菜鸡，正在努力做Web作业。" : "这个人很懒，什么也没有留下");
+    $("p.user-info").html($userdata["author_id"] == "7" ? "一个在役ACMer菜鸡，正在努力做Web作业。" : "这个人很懒，什么也没有留下");
     $("img.user-ava").attr("src", $userdata["author_ava"] == "" ? textToImg($userdata["author_name"]) : $userdata["author_ava"]);
     // 得到要显示的总的记录数
     $.ajax({

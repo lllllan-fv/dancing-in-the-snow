@@ -47,6 +47,9 @@
 </head>
 
 <body>
+
+    <div class="home-loading animate__animated animate__bounceOut"></div>
+
     <!-- ! navigation -->
     <section id="navigation">
         <input type="text" class="text-title" id="title" placeholder="请输入文章标题">
@@ -120,24 +123,6 @@
 
     <!-- ^ markdwon -->
     <script src="js/simplemde-1.11.2.min.js"></script>
-    <script>
-        var simplemde = new SimpleMDE({
-            autofocus: true,
-            element: $("#mdEditor")[0],
-            initialValue: "",
-        });
-
-        simplemde.codemirror.on("change", function () {
-            console.log(simplemde.value());
-
-            var parser = new HyperDown,
-                html = parser.makeHtml(simplemde.value());
-            console.log(html);
-
-            var parsing = "<?php echo string_tags(html)?>";
-            console.log(parsing);
-        });
-    </script>
 
     <!-- ^ 刷新回到页面顶部 -->
     <script type="text/javascript">

@@ -52,15 +52,39 @@ function load() {
     }
     console.log("now", strPage);
 
-    if (!$userdata["user_id"]) {
-        if (strPage == "modify.html" || strPage == "edit.html") {
-            window.open('inaccessible.html', '_self');
-        }
-    } else {
-        if (strPage == "login.html" || strPage == "register.html") {
+    if (strPage == "index.html") {
+
+    } else if (strPage == "admin.html") {
+
+    } else if (strPage == "article.html") {
+        // ! 无管理员身份强制送到主页
+        if ($userdata["identity"] == "0") {
             window.open('index.html', '_self');
         }
+    } else if (strPage == "commend.html") {
+
+    } else if (strPage == "edit.html") {
+        // ! 编辑到了不属于自己的文章强制送到文章页面
+        if ($userdata["author_id"] != $userdata["user_id"]) {
+            window.open('article.html', '_self');
+        }
+    } else if (strPage == "inaccessible.html") {
+        if ($userdata["user_id"]) {
+            window.open('index.html', '_self');
+        }
+    } else if (strPage == "login.html" || strPag == "register.html") {
+        // ! 登录界面或注册界面完成登录，强制送到主页
+        if ($userdata["user_id"]) {
+            window.open('index.html', '_self');
+        }
+    } else if (strPage == "modify.html") {
+        if (!$userdata["user_id"]) {
+            window.open('inaccessible.html', '_self');
+        }
+    } else if (strPage == "space.html") {
+
     }
+
 }
 
 $(document).ready(function () { load(); });

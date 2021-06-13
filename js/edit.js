@@ -127,8 +127,16 @@ $(document).ready(function () {
                 article_id: $userdata["article_id"],
             },
             success: function (data) {
-                console.log(data);
-                init(data);
+                console.log("init", data, Date());
+                $("#title").val(data["article_title"]);
+                $("[name='switch']").prop("checked", "ture");
+                $path = data["article_path"];
+                var simplemde = new SimpleMDE({
+                    autofocus: true,
+                    element: $("#mdEditor")[0],
+                    initialValue: data["article_text"],
+                });
+                simplemde.codemirror.on("change", function () { $flag = false; })
             },
             error: function () {
                 alert("edit.js => edit.php error");
@@ -138,6 +146,7 @@ $(document).ready(function () {
 })
 
 function init(data) {
+    console.log("initing", Date());
     $("#title").val(data["article_title"]);
     $("textarea").val(data["article_text"]);
     $("[name='switch']").prop("checked", "ture");
@@ -146,7 +155,6 @@ function init(data) {
 }
 
 $("#title").on("input propertychange change", function () { $flag = false; })
-simplemde.codemirror.on("change", function () { $flag = false; })
 
 window.addEventListener("beforeunload", function (e) {
     if (!$flag) {

@@ -3,12 +3,26 @@
 <center>
 
 # Dancing in the snow
-**Version:** 3.3.3
-**update:** 01/06/13 01:44
+**Version:** 3.3.4
+**update:** 01/06/13 10:32
 
 </center>
 
 # 历史版本
+
+## Version 3.3.4
+
+- 2021.6.13 10:32
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 处理了一些bug
+  - 编辑文章之后点开了另一篇不属于自己的文章，刷新编辑页面会跳转到别人的文章编辑
+  - 编辑页面编辑框的生成和后台数据的读取速度方面的不确定性，导致初始化不稳定
+</details>
+
+---
 
 ## Version 3.3.3
 

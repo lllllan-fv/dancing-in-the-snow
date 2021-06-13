@@ -17,6 +17,9 @@
     $article_text = fread($file, filesize("../" . $row["article_path"]));
     fclose($file);
 
+    $_SESSION["author_id"] = $row["author_id"];
+    $_SESSION["author_name"] = $_row["user_name"];
+
     echo json_encode(array(
         "article_id" => $article_id,
         "article_title" => $row["article_title"],
