@@ -70,6 +70,9 @@ function load() {
         if ($userdata["author_id"] && ($userdata["author_id"] != $userdata["user_id"])) {
             window.open('article.html', '_self');
         }
+        if (!$userdata["user_id"]) {
+            window.open('inaccessible.html', '_self');
+        }
     } else if (strPage == "inaccessible.html") {
         if ($userdata["user_id"]) {
             window.open('index.html', '_self');

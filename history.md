@@ -3,16 +3,28 @@
 <center>
 
 # Dancing in the snow
-**Version:** 3.3.6
-**update:** 01/06/14 16:47
+**Version:** 3.3.7
+**update:** 01/06/14 16:34
 
 </center>
 
 # 历史版本
 
+## Version 3.3.7
+
+- 2021.6.14 16:34
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 修改了inaccessible.html
+</details>
+
+---
+
 ## Version 3.3.6
 
-- 2021.6.14 16:47
+- 2021.6.14 16:27
 
 <details>
   <summary><strong>更新内容</strong></summary>
