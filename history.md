@@ -3,12 +3,25 @@
 <center>
 
 # Dancing in the snow
-**Version:** 3.3.5
-**update:** 01/06/14 01:34
+**Version:** 3.3.6
+**update:** 01/06/14 16:47
 
 </center>
 
 # 历史版本
+
+## Version 3.3.6
+
+- 2021.6.14 16:47
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 修改了admin界面
+  - 修改开关的同时及访问后台数据库进行修改
+</details>
+
+---
 
 ## Version 3.3.5
 

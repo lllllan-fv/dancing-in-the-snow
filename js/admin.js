@@ -75,17 +75,6 @@ function InitTable(pageIndex) {
                             <th>公开/私密</th>\
                             <th>操作</th>\
                         </tr></thead>";
-            "<tbody>\
-                    <tr class='success'>\
-                        <th scope='row'>1</th>\
-                        <td>lllllan的第一篇博客</td>\
-                        <td>lllllan</td>\
-                        <td>2021/06/01</td>\
-                        <td>2021/06/05</td>\
-                        <td><input type='checkbox' name='switch' checked></td>\
-                        <td><input type='checkbox' name='switch' checked></td>\
-                        <td><a role='button'>编辑</a>&emsp;<a role='button'>删除</a></td>\
-                    </tr>";
 
             $.each(data, function () {
                 var state_check = this["article_state"] == "1" ? "checked" : "";
@@ -96,9 +85,9 @@ function InitTable(pageIndex) {
                 str += "<td>" + this["author_id"] + "</td>";
                 str += "<td>" + this["create_time"] + "</td>";
                 str += "<td>" + this["update_time"] + "</td>";
-                str += "<td><input type='checkbox' name='state_switch' " + state_check + "></td>";
-                str += "<td><input type='checkbox' name='public_switch' " + public_check + "></td>";
-                str += "<td><a role='button' class='save'>保存</a>&emsp;<a role='button' class='remove'>删除</a></td>";
+                str += "<td><input type='checkbox' name='state_switch' " + state_check + " article_id='" + this["article_id"] + "'></td>";
+                str += "<td><input type='checkbox' name='public_switch' " + public_check + " article_id='" + this["article_id"] + "'></td>";
+                str += "<td><a role='button' class='edit'>编辑</a>&emsp;<a role='button' class='remove'>删除</a></td>";
                 str += "</tr>";
             })
 
@@ -114,11 +103,23 @@ function InitTable(pageIndex) {
                 size: "normal", // 设置控件大小,从小到大  (mini/small/normal/large)
                 // 当开关状态改变时触发
                 onSwitchChange: function (event, state) {
-                    if (state == true) {
-                        console.log("true");
-                    } else {
-                        console.log("false");
-                    }
+                    console.log($(this).attr("article_id"), state);
+                    $.ajax({
+                        url: 'php/adminState.php',
+                        async: false, // 取消异步
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            article_id: $(this).attr("article_id"),
+                            article_state: state ? "1" : "0",
+                        },
+                        success: function (data) {
+                            console.log(data);
+                        },
+                        error: function () {
+                            alert("admin.js => adminState.php error");
+                        }
+                    });
                 }
             });
 
@@ -130,37 +131,47 @@ function InitTable(pageIndex) {
                 size: "normal", // 设置控件大小,从小到大  (mini/small/normal/large)
                 // 当开关状态改变时触发
                 onSwitchChange: function (event, state) {
-                    if (state == true) {
-                        console.log("true");
-                    } else {
-                        console.log("false");
-                    }
+                    console.log($(this).attr("article_id"), state);
+                    $.ajax({
+                        url: 'php/adminPublic.php',
+                        async: false, // 取消异步
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            article_id: $(this).attr("article_id"),
+                            article_public: state ? "1" : "0",
+                        },
+                        success: function (data) {
+                            console.log(data);
+                        },
+                        error: function () {
+                            alert("admin.js => adminPublic.php error");
+                        }
+                    });
                 }
             });
 
-            $("a.save").click(function () {
-                console.log("edit", $(this).parent().parent().attr("id"));
+            $("a.edit").click(function () {
+                console.log('edit click', this, $(this).prevAll("[name='public_switch']"));
                 $.ajax({
-                    url: 'php/adminSave.php',
+                    url: 'php/unWrite.php',
                     async: false, // 取消异步
                     type: 'POST',
                     dataType: 'json',
                     data: {
-                        article_id: $(this).parent().parent().attr("id"),
-                        article_public: $(this).parent().parent().find("[name='public_switch']").is(":checked") ? "1" : "0",
-                        article_state: $(this).parent().parent().find("[name='state_switch']").is(":checked") ? "1" : "0",
+                        article_id: $(this).parent().parent().attr("id")
                     },
                     success: function (data) {
                         console.log(data);
+                        window.open("edit.html", "_blank");
                     },
                     error: function () {
-                        alert("admin.js => unWrite.php error");
+                        alert("getArticle.js => unWrite.php error");
                     }
                 });
             })
 
             $("a.remove").click(function () {
-                console.log("remove", $(this).parent().parent().attr("id"));
                 $.ajax({
                     url: 'php/remove.php',
                     async: false, // 取消异步
