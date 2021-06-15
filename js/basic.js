@@ -67,12 +67,17 @@ function load() {
 
     } else if (strPage == "edit.html") {
         // ! 编辑到了不属于自己的文章强制送到文章页面
-        if ($userdata["author_id"] && ($userdata["author_id"] != $userdata["user_id"])) {
-            window.open('article.html', '_self');
+        if ($userdata["identity"] == '1') {
+
+        } else {
+            if ($userdata["author_id"] && ($userdata["author_id"] != $userdata["user_id"])) {
+                window.open('article.html', '_self');
+            }
+            if (!$userdata["user_id"]) {
+                window.open('inaccessible.html', '_self');
+            }
         }
-        if (!$userdata["user_id"]) {
-            window.open('inaccessible.html', '_self');
-        }
+
     } else if (strPage == "inaccessible.html") {
         if ($userdata["user_id"]) {
             window.open('index.html', '_self');
