@@ -55,14 +55,10 @@ function load() {
     if (strPage == "index.html") {
 
     } else if (strPage == "admin.html") {
-        if (!$userdata["user_id"]) {
+        if (!$userdata["user_id"] || $userdata["identity"] == "0") {
             window.open('inaccessible.html', '_self');
         }
     } else if (strPage == "article.html") {
-        // ! 无管理员身份强制送到主页
-        if ($userdata["identity"] == "0") {
-            window.open('index.html', '_self');
-        }
     } else if (strPage == "commend.html") {
 
     } else if (strPage == "edit.html") {

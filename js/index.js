@@ -151,7 +151,7 @@ function InitTable(pageIndex) {
                         })
                     },
                     error: function () {
-                        alert("getArticle error");
+                        alert("index.js => getArticle.php error");
                     }
                 });
             })

@@ -3,12 +3,24 @@
 <center>
 
 # Dancing in the snow
-**Version:** 3.3.8
-**update:** 01/06/15 19:38
+**Version:** 3.3.9
+**update:** 01/06/16 15:19
 
 </center>
 
 # 历史版本
+
+## Version 3.3.9
+
+- 2021.6.16 15:19
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 修复发布文章后跳到主页的问题
+</details>
+
+---
 
 ## Version 3.3.8
 
