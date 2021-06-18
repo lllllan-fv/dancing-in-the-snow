@@ -53,14 +53,12 @@ function load() {
     console.log("now", strPage);
 
     if (strPage == "index.html") {
-
     } else if (strPage == "admin.html") {
         if (!$userdata["user_id"] || $userdata["identity"] == "0") {
             window.open('inaccessible.html', '_self');
         }
     } else if (strPage == "article.html") {
     } else if (strPage == "commend.html") {
-
     } else if (strPage == "edit.html") {
         // ! 编辑到了不属于自己的文章强制送到文章页面
         if ($userdata["identity"] == '1') {
@@ -73,7 +71,6 @@ function load() {
                 window.open('inaccessible.html', '_self');
             }
         }
-
     } else if (strPage == "inaccessible.html") {
         if ($userdata["user_id"]) {
             window.open('index.html', '_self');
@@ -88,7 +85,6 @@ function load() {
             window.open('inaccessible.html', '_self');
         }
     } else if (strPage == "space.html") {
-
     }
 
 }

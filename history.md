@@ -3,12 +3,24 @@
 <center>
 
 # Dancing in the snow
-**Version:** 3.3.9
-**update:** 01/06/16 15:19
+**Version:** 3.3.10
+**update:** 01/06/18 23:25
 
 </center>
 
 # 历史版本
+
+## Version 3.3.910
+
+- 2021.6.18 23:25
+
+<details>
+  <summary><strong>更新内容</strong></summary>
+
+- 修复修改页面的bug
+</details>
+
+---
 
 ## Version 3.3.9
 

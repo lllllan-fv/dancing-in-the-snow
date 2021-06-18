@@ -10,7 +10,7 @@ function modify() {
             user_pwd: $("#form-pwd").val(),
             ava_path: ava_path,
         },
-        success: function(data) {
+        success: function (data) {
             console.log(data);
             if (data.status == 0) {
                 $(".help-block").html(data.msg);
@@ -18,14 +18,14 @@ function modify() {
                 window.open('index.html', '_self');
             }
         },
-        error: function() {
+        error: function () {
             alert("modify.js => modify.php error");
         }
     });
     $("#form-btn").attr("disabled", false);
 }
 
-$("#form-btn").click(function() {
+$("#form-btn").click(function () {
     $flag = true;
 
     if ($("#form-username").val() == "") {
@@ -55,7 +55,7 @@ $("#form-btn").click(function() {
 });
 
 // ! 回车提交
-document.onkeydown = function(e) {
+document.onkeydown = function (e) {
     e = e || window.event;
     if ($("input").is(":focus")) {
         if (e.keyCode == 13) {
@@ -66,7 +66,7 @@ document.onkeydown = function(e) {
 }
 
 // ! input监听
-$("input").on("input propertychange change", function() {
+$("input").on("input propertychange change", function () {
     $flag = false;
 
     if ($("#form-username").val() != "") {
@@ -92,7 +92,7 @@ $("input").on("input propertychange change", function() {
     }
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     canUpload = false;
     ava_path = "";
     fdata = new FormData();
