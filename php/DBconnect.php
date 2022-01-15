@@ -1,7 +1,7 @@
 <?php
-    $host = "120.27.224.20";
-    $username = "root";
-    $password = "Lllllan@0424";
+    $host = "";
+    $username = "";
+    $password = "";
     $databasename = "dsdb";
 
     $conn = mysqli_connect($host, $username, $password, $databasename);
